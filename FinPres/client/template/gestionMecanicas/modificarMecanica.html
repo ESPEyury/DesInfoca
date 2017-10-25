@@ -1,0 +1,49 @@
+<template id="meca" name="modificarMecanicas">
+  <div class="breadcrumbs">
+    <div class="container">
+      <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+        <li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+        <li class="active">Modificar Informacion Mecanico</li>
+      </ol>
+    </div>
+  </div>
+  <!-- //breadcrumbs -->
+  <!-- register -->
+  <div class="register">
+    <div class="container">
+      <h2>Modificar Mecanicos</h2>
+
+      <table class="responstable">
+
+        <tr>
+          <th ><span>Cedula</span></th>
+          <th >Nombre</th>
+          <th>Apellido</th>
+          <th>Correo Electronico</th>
+          <th>Direccion de Sucursal</th>
+          <th>Telefono</th>
+          <th>Nombre mecanica</th>
+          <th>Sucursal</th>
+          <th>Actualizar</th>
+        </tr>
+          {{#each Mecanics}}
+            <form class="{{_id}}" id="{{_id}}" method="post">
+            </form>
+          <tr>
+            <td>{{cedu}}</td>
+            <td>{{nom}}</td>
+            <td>{{ape}}</td>
+            <td><input type="text" placeholder="{{ema}}" size="13" name="Email" form="{{_id}}" required></td>
+            <td><input type="text" placeholder="{{dir}}" size="14" name="Dir" form="{{_id}}" required></td>
+            <td><input type="text" placeholder="{{tele}}" size="8" name="Telef" form="{{_id}}" required></td>
+            <td><input type="text" placeholder="{{nomMe}}" size="13" name="NomMeca" form="{{_id}}" required></td>
+            <td><input type="text" placeholder="{{sucur}}" size="8" name="Sucur" form="{{_id}}" required></td>
+            <td><input type="submit" name="update" value="Actualizar" form="{{_id}}"></td>
+          </tr>
+          {{/each}}
+      </table>
+
+    </div>
+  </div>
+  <!-- //register -->
+</template>

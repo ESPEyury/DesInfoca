@@ -1,0 +1,40 @@
+<template id="meca" name="consultarClientes">
+  <div class="breadcrumbs">
+    <div class="container">
+      <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+        <li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+        <li class="active">Usuarios Registrados en la Pagina</li>
+      </ol>
+    </div>
+  </div>
+  <!-- //breadcrumbs -->
+  <!-- register -->
+  <div class="register">
+    <div class="container">
+      <h2>Clientes Registrados</h2>
+
+      <table class="responstable">
+
+        <tr>
+          <th ><span>Cedula</span></th>
+          <th >Nombre</th>
+          <th>Apellido</th>
+          <th>Nombre De usuario</th>
+          <th>Email</th>
+					<th>Registrado</th>
+        </tr>
+          {{#each Mecanics}}
+          <tr>
+            <td>{{nameVar}}</td>
+            <td>{{lastNameVar}}</td>
+            <td>{{userVar}}</td>
+            <td>{{emailVar}}</td>
+            <td>{{createdAt}}</td>
+          </tr>
+          {{/each}}
+      </table>
+
+    </div>
+  </div>
+  <!-- //register -->
+</template>

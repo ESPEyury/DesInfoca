@@ -1,0 +1,37 @@
+<template id="revisarServicios" name="revisarServicios">
+	<!-- breadcrumbs -->
+	{{#each Revisar}}
+	<div class="breadcrumbs">
+		<div class="container">
+			<ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+				<li><a href="/MecanicServ"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+				<li class="active">{{nomMe}}</li>
+			</ol>
+		</div>
+	</div>
+<!-- //breadcrumbs -->
+<!-- register -->
+	<div class="register">
+		<div class="container">
+			<h2>Servicio: {{tipServ}}</h2>
+			<div class="login-form-grids">
+				<form class="insert-serv" method="post" id="usrform">
+						<label for="TipoServ">Servicio: {{tipServ}}</label>
+					  <input type="text" placeholder="Tipo De Servicio" required  name="TipServ">
+						<textarea rows="4" cols="38" name="DescServ" form="usrform" placeholder="Descripcion Del Servicio" required></textarea>
+						<select id="country" class="frm-field required sect" name="Sucursal" form="usrform">
+						</select>
+						<input type="text" placeholder="Costo" required name="Cost">
+						<input type="submit" class="Ingresar" value="Ingresar">
+				</form>
+
+			</div>
+			<div class="register-home">
+				<a href="/MecanicServ">Volver al inicio</a>
+			</div>
+
+
+		</div>
+	</div>
+{{/each}}
+</template>

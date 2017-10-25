@@ -1,0 +1,90 @@
+<template id="searchMechanics" name="searchMechanics">
+	<div class="products">
+	<div class="container">
+
+		<div class="col-md-8 products-right">
+			<!--
+			<div class="products-right-grid">
+				<div class="products-right-grids">
+					<div class="sorting">
+						<select id="country" onchange="change_country(this.value)" class="frm-field required sect">
+							<option value="null"><i class="fa fa-arrow-right" aria-hidden="true"></i>Mostrar por defecto</option>
+							<option value="null"><i class="fa fa-arrow-right" aria-hidden="true"></i>Mas popular</option>
+							<option value="null"><i class="fa fa-arrow-right" aria-hidden="true"></i>Mejor calificados</option>
+							<option value="null"><i class="fa fa-arrow-right" aria-hidden="true"></i>Mejores precios</option>
+						</select>
+					</div>
+
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		-->
+
+			<div class="agile_top_brands_grids">
+
+				{{#each Servicios}}
+					<div class="col-md-40 top_brand_left" >
+						<div class="hover14 column">
+							<div class="agile_top_brand_left_grid">
+								<div class="agile_top_brand_left_grid_pos">
+									<img src="/images/offer.png" alt=" " class="img-responsive">
+								</div>
+								<div class="agile_top_brand_left_grid1">
+									<figure>
+										<div class="snipcart-item block">
+											<div class="snipcart-thumb">
+												<a href="single.html"><img title=" " alt=" " src="/images/m2.png"></a>
+												<h2>Servicio: {{tipServ}}</h2>
+												<h3>{{mecaAs}}</h3>
+												<h4 >Costo: {{costo}} </h4>
+												<h4 >Descripcion: {{descript}}</h4>
+												<!--href="/" onclick="location.href=Ruta;return false;"-->
+												<button  class="buscar">Mas Informacion</button>
+											</div>
+											<div class="snipcart-details top_brand_home_details">
+												<form name="formServ" action="/RevServs" method="post">
+													<input type="submit" name="submit" value="Revisar mecanica" class="button" size="15">
+												</form>
+											</div>
+										</div>
+									</figure>
+								</div>
+							</div>
+						</div>
+					</div>
+				<br><br><br>
+         {{/each}}
+
+			</div>
+<!--
+			<nav class="numbering">
+				<ul class="pagination paging">
+					<li>
+						<a href="#" aria-label="Previous">
+							<span aria-hidden="true">&laquo;</span>
+						</a>
+					</li>
+					<li class="active"><a href="#">1<span class="sr-only">(current)</span></a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li>
+						<a href="#" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+-->
+
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+</div>
+
+
+
+
+
+</template>
