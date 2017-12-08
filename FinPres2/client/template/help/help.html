@@ -1,0 +1,152 @@
+<template name="help">
+
+<body>
+<!-- header -->
+
+<!-- //header -->
+<!-- navigation -->
+<div class="navigation-agileits">
+  <div class="container">
+    <nav class="navbar navbar-default">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header nav_2">
+              <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+                <span class="sr-only">Toggle navigation</span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+              <ul class="nav navbar-nav">
+                <li><a>Acerca de nosotros</a></li>
+              </ul>
+            </div>
+      </nav>
+    </div>
+  </div>
+
+<!-- //navigation -->
+<!-- main-slider -->
+<!-- //main-slider -->
+<!-- //top-header and slider -->
+<!-- top-brands -->
+<div class="top-brands">
+  <div class="container">
+  <h2>HAGANOS SABER SUS DUDAS Y PREGUNTAS</h2>
+    <div class="grid_3 grid_5">
+      <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+        <div id="myTabContent" class="tab-content">
+          <div role="tabpanel" class="tab-pane fade in active" id="expeditions" aria-labelledby="expeditions-tab">
+            <div class="agile-tp">
+    						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">infocanica@gmail.com</a></li>
+    						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+593987309833</li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- //footer -->
+<div class="footer">
+		<div class="container">
+			<div class="w3_footer_grids">
+				<div class="col-md-3 w3_footer_grid">
+					<h3>Contacto</h3>
+
+					<ul class="address">
+						<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>La concordia y<span> 7ma transversal</span></li>
+						<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">infocanica@gmail.com</a></li>
+						<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+593987309833</li>
+					</ul>
+				</div>
+				<div class="col-md-3 w3_footer_grid">
+					<h3>Informacion</h3>
+					<ul class="info">
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="/Acerca">Acerca de nosotros</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-3 w3_footer_grid">
+					<h3>Perfil</h3>
+					<ul class="info">
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="\">Ingresar</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="\Registrar">Registrarse</a></li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+
+		<div class="footer-copy">
+
+			<div class="container">
+				<p>© 2017 INFOCANICA. Creditos  Romero-Guevara-Rivadeneira</p>
+			</div>
+		</div>
+
+	</div>
+<div class="footer-botm">
+    <div class="container">
+      <div class="w3layouts-foot">
+        <ul>
+          <li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+          <li><a href="#" class="w3_agile_vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+      <div class="payment-w3ls">
+        <img src="/images/card.png" alt=" " class="img-responsive">
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+  </div>
+<!-- //footer -->
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- top-header and slider -->
+<!-- here stars scrolling icon -->
+<script type="text/javascript">
+  $(document).ready(function() {
+    /*
+      var defaults = {
+      containerID: 'toTop', // fading element id
+      containerHoverID: 'toTopHover', // fading element hover id
+      scrollSpeed: 1200,
+      easingType: 'linear'
+      };
+    */
+
+    $().UItoTop({ easingType: 'easeOutQuart' });
+
+    });
+</script>
+<!-- //here ends scrolling icon -->
+<script src="js/minicart.min.js"></script>
+<script>
+// Mini Cart
+paypal.minicart.render({
+  action: '#'
+});
+
+if (~window.location.search.indexOf('reset=true')) {
+  paypal.minicart.reset();
+}
+</script>
+<!-- main slider-banner -->
+<script src="js/skdslider.min.js"></script>
+<link href="css/skdslider.css" rel="stylesheet">
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+    jQuery('#demo1').skdslider({'delay':5000, 'animationSpeed': 2000,'showNextPrev':true,'showPlayButton':true,'autoSlide':true,'animationType':'fading'});
+
+    jQuery('#responsive').change(function(){
+      $('#responsive_wrapper').width(jQuery(this).val());
+    });
+
+  });
+</script>
+<!-- //main slider-banner -->
+</body>
+</template>

@@ -1,0 +1,47 @@
+<template id="meca" name="consultarMecanicas">
+  <div class="breadcrumbs">
+    <div class="container">
+      <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+        <li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+        <li class="active">Mecanicos Registrados En Infocanica</li>
+      </ol>
+    </div>
+  </div>
+  <!-- //breadcrumbs -->
+  <!-- register -->
+  <div class="register">
+    <div class="container">
+      <h2>Mecanicos Registrados</h2>
+
+      <table class="responstable">
+
+        <tr>
+          <th ><span>Cedula</span></th>
+          <th >Nombre</th>
+          <th>Apellido</th>
+          <th>Correo</th>
+          <th>Direccion</th>
+          <th>Telefono</th>
+          <th>Nombre mecanica</th>
+          <th>Reistrado Por</th>
+          <th>Borrar</th>
+        </tr>
+          {{#each Mecanics}}
+          <tr>
+            <td>{{cedu}}</td>
+            <td>{{nom}}</td>
+            <td>{{ape}}</td>
+            <td>{{ema}}</td>
+            <td>{{dir}}</td>
+            <td>{{tele}}</td>
+            <td>{{nomMe}}</td>
+            <td>{{tipouser}}</td>
+            <td><button class="delete">Borrar</button></td>
+          </tr>
+          {{/each}}
+      </table>
+
+    </div>
+  </div>
+  <!-- //register -->
+</template>

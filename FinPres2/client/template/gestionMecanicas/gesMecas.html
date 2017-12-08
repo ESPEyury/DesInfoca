@@ -1,0 +1,76 @@
+<template id="gesMen" name="gesMen">
+	<!-- breadcrumbs -->
+	<div class="breadcrumbs">
+		<div class="container">
+			<ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+				<li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+				<li class="active">Formulario Registro Mecanicos</li>
+			</ol>
+		</div>
+	</div>
+<!-- //breadcrumbs -->
+<!-- register -->
+	<div class="register">
+		<div class="container">
+			<h2>Registrar Mecanico</h2>
+
+			<div class="login-form-grids">
+				<form class="insert-meca" form="insertMeca" method="post" name="formRes">
+					<h5>Informacion de Mecanico</h5>
+					  <input type="text" placeholder="Cedula" required  name="Cedula" onchange="validarcedula()">
+						<input type="text" placeholder="Nombres" required name="Nombres">
+						<input type="text" placeholder="Apellidos" required name="Apellidos">
+						<input type="email" placeholder="Correo" required name="Email">
+						<input type="text" placeholder="Direccion" required name="Direccion">
+						<input type="text" placeholder="Telefono" required name="Telefono">
+						<input type="text" placeholder="Nombre De La Mecanica" required name="Mecanica">
+						<select id="country" class="frm-field required sect" name="Sucursal" required>
+							<option value="Unica Sucursal"><i class="fa fa-arrow-right" aria-hidden="true" form="insertMeca"></i>Sucursal por defecto</option>
+							<option value="Sucursal Sur"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sucursal Sur</option>
+							<option value="Sucursal Centro"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sucursal Centro</option>
+							<option value="Sucursal Norte"><i class="fa fa-arrow-right" aria-hidden="true"></i>Sucursal Norte</option>
+						</select>
+						<input type="text" placeholder="Contraseña" required name="Pass">
+						<input type="submit" class="Ingresar" value="Ingresar">
+				</form>
+
+			</div>
+			<div class="register-home">
+				<a href="/">Volver al inicio</a>
+			</div>
+
+
+		</div>
+	</div>
+
+	<script type="text/javascript">
+			function validarcedula()
+			{
+			 var i;
+			 var cedula;
+			 var acumulado;
+			 cedula=document.formRes.Cedula.value;
+			 var instancia;
+			 acumulado=0;
+			 for (i=1;i<=9;i++)
+			 {
+			  if (i%2!=0)
+			  {
+			   instancia=cedula.substring(i-1,i)*2;
+			   if (instancia>9) instancia-=9;
+			  }
+			  else instancia=cedula.substring(i-1,i);
+			  acumulado+=parseInt(instancia);
+			 }
+			 while (acumulado>0)
+			  acumulado-=10;
+			 if (cedula.substring(9,10)!=(acumulado*-1))
+			 {
+			  alert("Cedula no valida!!");
+			  document.formRes.Cedula.setfocus();
+			 }
+			 alert("Cedula valida !!");
+			}
+</script>
+
+</template>

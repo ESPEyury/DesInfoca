@@ -1,0 +1,150 @@
+<template id="sesionAdmin" name="mainAdmin">
+
+
+
+	<!-- //navigation -->
+	<!-- breadcrumbs -->
+		<div class="breadcrumbs">
+			<div class="container">
+				<ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+					<li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+					<li class="active">Pagina Administrador</li>
+				</ol>
+			</div>
+		</div>
+	<!-- //breadcrumbs -->
+	<!-- register -->
+		<div class="register">
+			<div class="container">
+				<h2>Sesion como Administrador</h2>
+				<div class="login-form-grids">
+					<label for="Name" text-aling=center>Gestion De Mecanicos</label>
+					<form action="/GesMen" method="post">
+						<input type="submit" value="Registrar Mecanicos">
+					</form>
+					<form action="/GesMenCon" method="post">
+				     <input type="submit" value="ConsultarMecanicos">
+				  </form>
+					<form action="/GesMenMod" method="post">
+						<input type="submit" value="Modificar Mecanicos">
+					</form>
+				</div>
+				<div class="login-form-grids">
+						<label for="Name" text-aling=center>Area de Usuarios</label>
+					<form action="/GesCli" method="post">
+						<input type="submit" value="Consultar Usuarios">
+					</form>
+				</div>
+
+			</div>
+		</div>
+	<!-- //register -->
+	<!-- //footer -->
+	<div class="footer">
+			<div class="container">
+				<div class="w3_footer_grids">
+					<div class="col-md-3 w3_footer_grid">
+						<h3>Contacto</h3>
+
+						<ul class="address">
+							<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Alguna direccion<span>Tu direcccion ctm.</span></li>
+							<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@asdas.com</a></li>
+							<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+5939999999</li>
+						</ul>
+					</div>
+					<div class="col-md-3 w3_footer_grid">
+						<h3>Informacion</h3>
+						<ul class="info">
+							<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="about.html">Acerca de nosotros</a></li>
+							<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="contact.html">Contactanos</a></li>
+							<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="products.html">Algo mas</a></li>
+						</ul>
+					</div>
+
+					<div class="col-md-3 w3_footer_grid">
+						<h3>Perfil</h3>
+						<ul class="info">
+							<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="products.html">Home</a></li>
+							<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="checkout.html">Mi Cuenta</a></li>
+							<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="login.html">Ingresar</a></li>
+							<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="registered.html">Registrarse</a></li>
+						</ul>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+
+			<div class="footer-copy">
+
+				<div class="container">
+					<p>© 2017 INFOCANICA. Creditos  Romero-Guevara-Rivadeneira</p>
+				</div>
+			</div>
+
+		</div>
+		<div class="footer-botm">
+				<div class="container">
+					<div class="w3layouts-foot">
+						<ul>
+							<li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+							<li><a href="#" class="w3_agile_vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+					<div class="payment-w3ls">
+						<img src="/images/card.png" alt=" " class="img-responsive">
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+	<!-- //footer -->
+	<!-- Bootstrap Core JavaScript -->
+	<script src="/js/bootstrap.min.js"></script>
+
+	<!-- top-header and slider -->
+	<!-- here stars scrolling icon -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				/*
+					var defaults = {
+					containerID: 'toTop', // fading element id
+					containerHoverID: 'toTopHover', // fading element hover id
+					scrollSpeed: 1200,
+					easingType: 'linear'
+					};
+				*/
+
+				$().UItoTop({ easingType: 'easeOutQuart' });
+
+				});
+		</script>
+	<!-- //here ends scrolling icon -->
+	<script src="/js/minicart.min.js"></script>
+	<script>
+		// Mini Cart
+		paypal.minicart.render({
+			action: '#'
+		});
+
+		if (~window.location.search.indexOf('reset=true')) {
+			paypal.minicart.reset();
+		}
+	</script>
+	<!-- main slider-banner -->
+	<script src="/js/skdslider.min.js"></script>
+	<link href="/skdslider.css" rel="stylesheet">
+	<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery('#demo1').skdslider({'delay':5000, 'animationSpeed': 2000,'showNextPrev':true,'showPlayButton':true,'autoSlide':true,'animationType':'fading'});
+
+				jQuery('#responsive').change(function(){
+				  $('#responsive_wrapper').width(jQuery(this).val());
+				});
+
+			});
+	</script>
+	<!-- //main slider-banner -->
+
+
+</template>
