@@ -49,3 +49,14 @@ export const TestSearchMechanicEmpty = () => {
     console.log('Prueba Fallida, resultado:'+actuRestult);
   }
 }
+
+export const TestSearchMechanicJhonBox = () => {
+  expResult=0;
+  actuRestult = coutSearch('JhonBox');
+  //La razon porque sera 0 es debido a que no existe registrada la mecanica aun
+  if(expResult===actuRestult){
+    console.log('Prueba Aprovada, resultado:'+expResult);
+  }else{
+    console.log('Prueba Fallida, resultado:'+actuRestult);
+  }
+}

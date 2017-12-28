@@ -19,6 +19,7 @@ Meteor.startup(()=>{
     searchMechanicsTest. TestSearchMechanicNumbers();
     searchMechanicsTest.TestSearchMechanicLavado();
     searchMechanicsTest.TestSearchMechanicEmpty();
+    searchMechanicsTest.TestSearchMechanicJhonBox();
   },1000);
 
 
