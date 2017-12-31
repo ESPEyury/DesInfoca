@@ -24,3 +24,33 @@ Template.gestionarServicios.events({
             event.target.Sucursal.value = '';
             },
         });
+export const validarNumeros = (costo) =>{
+           if(!IsNaN(costo)){
+             if(costo>0){
+              return true;}
+            else {
+              return false;}
+            }
+          else {
+            return false;
+          }
+};
+export const insertData = (tipouser,mecaAs,tipServ,descript,costo,sucursal) =>{
+  if(IsNaN(tipouser)==true && IsNaN(mecaAs)==true && IsNaN(descript)==true && IsNaN(sucursal)==true && validarNumeros(costo)==true )
+  {
+    Servicios.insert({
+      tipouser,
+      mecaAs,
+      tipServ,
+      descript,
+      costo,
+      sucursal,
+      createdAt: new Date(),
+    })
+    return 1;
+  }
+  else {
+    //alert("Revisar campos");
+    return 0;
+  }
+};

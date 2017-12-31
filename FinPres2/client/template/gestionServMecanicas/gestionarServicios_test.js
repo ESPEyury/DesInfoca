@@ -82,6 +82,7 @@ export const testvalidarNumerosConLetras = () => {
   }else{
     console.log('Prueba Fallida, resultado:'+actualR);
   }
+}
 
 export const testvalidarNumerosNegativos = ()=>{
   expectedR=true;
@@ -91,5 +92,4 @@ export const testvalidarNumerosNegativos = ()=>{
   }else{
     console.log('Prueba Fallida, resultado:'+actualR);
   }
-}
 }
