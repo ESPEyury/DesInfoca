@@ -49,3 +49,39 @@ export const TestSearchNegativeNumbers = () => {
     console.log('Prueba Fallida, resultado:'+actuRestult);
   }
 }
+export const TestSearchZero = () => {
+  expResult='Busqueda No Valida';
+  actuRestult = setBusqueda(0);
+  if(actuRestult.localeCompare(expResult)==0){
+    console.log('Prueba Aprovada, resultado:'+expResult);
+  }else{
+    console.log('Prueba Fallida, resultado:'+actuRestult);
+  }
+}
+export const TestSearchAlphanumeric = () => {
+  expResult='Busqueda No Valida';
+  actuRestult = setBusqueda('07j0fh');
+  if(actuRestult.localeCompare(expResult)==0){
+    console.log('Prueba Aprovada, resultado:'+expResult);
+  }else{
+    console.log('Prueba Fallida, resultado:'+actuRestult);
+  }
+}
+export const TestSearchNegativeLetters = () => {
+  expResult='Busqueda No Valida';
+  actuRestult = setBusqueda('-a');
+  if(actuRestult.localeCompare(expResult)==0){
+    console.log('Prueba Aprovada, resultado:'+expResult);
+  }else{
+    console.log('Prueba Fallida, resultado:'+actuRestult);
+  }
+}
+export const TestSearchMecanica = () => {
+  expResult='Busqueda No Valida';
+  actuRestult = setBusqueda('Mecanica');
+  if(actuRestult.localeCompare(expResult)==0){
+    console.log('Prueba Aprovada, resultado:'+expResult);
+  }else{
+    console.log('Prueba Fallida, resultado:'+actuRestult);
+  }
+}

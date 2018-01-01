@@ -28,6 +28,9 @@ export const validarNumeros = (costo) =>{
            if(!IsNaN(costo)){
              if(costo>0){
               return true;}
+            /*else if (costo==0) {
+              alert("Ingrese un valor mayor a 0");
+            }*/
             else {
               return false;}
             }

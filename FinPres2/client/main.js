@@ -10,12 +10,20 @@ import * as test_cedula from "./template/gestionMecanicas/mecanicas_test.js";
 Meteor.startup(()=>{
   setTimeout(function(){
     console.log("PRUEBAS BUSQUEDA");
+    //10
     searchTest.TestSearchBanana();
     searchTest.TestSearchEmpty();
     searchTest.TestSearchServicio();
     searchTest.TestSearchNumbers();
     searchTest.TestSearchNegativeNumbers();
+    searchTest.TestSearchZero();
+    searchTest.TestSearchAlphanumeric();
+    searchTest.TestSearchNegativeLetters();
+    searchTest.TestSearchAlphanumeric();
+    searchTest.TestSearchMecanica();
+
     console.log("PRUEBAS BUSCAR MECANICAS")
+    //6
     searchMechanicsTest.TestSearchMechanicBanana();
     searchMechanicsTest.TestSearchMechanicNegatives();
     searchMechanicsTest. TestSearchMechanicNumbers();
@@ -23,6 +31,7 @@ Meteor.startup(()=>{
     searchMechanicsTest.TestSearchMechanicEmpty();
     searchMechanicsTest.TestSearchMechanicJhonBox();
     console.log("Pruebas de login: ");
+    //11
     test_login.control_login_test_Mecanico();
     test_login.control_login_test_Administrador();
     test_login.control_login_test_usuarioNormal();
@@ -35,6 +44,7 @@ Meteor.startup(()=>{
     test_login.control_login_test_admin_final();
     test_login.control_login_test_entero_positivo_grande();
     console.log("Pruebas de validacion de cedula: ");
+    //10
     test_cedula.validarcedula_test_valida();
     test_cedula.validarcedula_test_incompleta();
     test_cedula.validarcedula_test_mayor_a_10digitos();
@@ -45,6 +55,25 @@ Meteor.startup(()=>{
     test_cedula.validarcedula_test_pichincha();
     test_cedula.validarcedula_test_imbabura();
     test_cedula.validarcedula_test_imbabura_novalida();
+    console.log(" PRUEBAS  DE SERVICIOS DE MECANICAS");
+    //17
+    gestionarServiciosTest.testDataNormal();
+    gestionarServiciosTest.testNumerosEnDescripcion();
+    gestionarServiciosTest.testNumerosEnCosto();
+    gestionarServiciosTest.testNumerosEnTipoServicio();
+    gestionarServiciosTest.testNumerosEnSucursal();
+    gestionarServiciosTest.testNumerosNegativosEnCosto();
+    gestionarServiciosTest.testLetrasEnCosto();
+    gestionarServiciosTest.testNumerosEnTodo();
+    gestionarServiciosTest.testCeroNegativoEnTodo();
+    gestionarServiciosTest.testvalidarNumeros();
+    gestionarServiciosTest.testvalidarNumerosConLetras();
+    gestionarServiciosTest.testvalidarNumerosNegativos();
+    gestionarServiciosTest.testvalidarSoloLetras();
+    gestionarServiciosTest.testvalidarCero();
+    gestionarServiciosTest.testvalidarSimbolos();
+    gestionarServiciosTest.testvalidarNumerosMedianos();
+    gestionarServiciosTest.testvalidarLetrasNegavitas();
   },1000);
 
 

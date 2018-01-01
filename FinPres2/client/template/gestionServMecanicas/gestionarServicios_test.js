@@ -3,7 +3,7 @@ import {insertData} from "./gestionarServicios.js";
 
 export const testDataNormal = () => {
   expectedR=1;
-  actualR=insertData('Mecanico','No','Cambio de llantas','Mecanico con servicios varios','1344','Cumbaya')
+  actualR=insertData('Mecanico','No','Cambio de llantas','Mecanico con servicios varios','1344','Sucursal Sur')
   if(expectedR==actualR){
     console.log('Prueba Aprobada');
   }else{
@@ -12,7 +12,7 @@ export const testDataNormal = () => {
 }
 export const testNumerosEnDescripcion = () => {
   expectedR=1;
-  actualR=insertData('Mecanico','No','Cambio de aceite','312315','1344','Cumbaya')
+  actualR=insertData('Mecanico','No','Cambio de aceite','312315','1344','Sucursal Centro')
   if(expectedR==actualR){
     console.log('Prueba Aprobada');
   }else{
@@ -21,7 +21,7 @@ export const testNumerosEnDescripcion = () => {
 }
 export const testNumerosEnCosto = () => {
   expectedR=1;
-  actualR=insertData('Mecanico','No','Balanceo de llantas','Mecanico con servicios varios','1344','Cumbaya')
+  actualR=insertData('Mecanico','No','Balanceo de llantas','Mecanico con servicios varios','1344','Sucursal Sur')
   if(expectedR==actualR){
     console.log('Prueba Aprobada');
   }else{
@@ -30,7 +30,7 @@ export const testNumerosEnCosto = () => {
 }
 export const testNumerosEnTipoServicio = () => {
   expectedR=0;
-  actualR=insertData('Mecanico','No','8931209','Mecanico con servicios varios','1344','Cumbaya')
+  actualR=insertData('Mecanico','No','8931209','Mecanico con servicios varios','1344','Sucursal Sur')
   if(expectedR==actualR){
     console.log('Prueba Aprobada');
   }else{
@@ -39,7 +39,7 @@ export const testNumerosEnTipoServicio = () => {
 }
 export const testNumerosEnSucurcal = () => {
   expectedR=0;
-  actualR=insertData('Mecanico','No','Cambio de liquidos','Mecanico con servicios varios','1344','Cumbaya')
+  actualR=insertData('Mecanico','No','Cambio de liquidos','Mecanico con servicios varios','1344','Sucursal Sur')
   if(expectedR==actualR){
     console.log('Prueba Aprobada');
   }else{
@@ -48,7 +48,7 @@ export const testNumerosEnSucurcal = () => {
 }
 export const testNumerosNegativosEnCosto = () => {
   expectedR=0;
-  actualR=insertData('Mecanico','No','','Mecanico con servicios varios','-1344','Cumbaya')
+  actualR=insertData('Mecanico','No','','Mecanico con servicios varios','-1344','Sucursal Centro')
   if(expectedR==actualR){
     console.log('Prueba Aprobada');
   }else{
@@ -57,13 +57,32 @@ export const testNumerosNegativosEnCosto = () => {
 }
 export const testLetrasEnCosto = () => {
   expectedR=0;
-  actualR=insertData('Mecanico','No','Alineacion','Mecanico con servicios varios','Mil','Cumbaya')
+  actualR=insertData('Mecanico','No','Alineacion','Mecanico con servicios varios','Mil','Sucursal Norte')
   if(expectedR==actualR){
     console.log('Prueba Aprobada');
   }else{
     console.log('Prueba Fallida, resultado:'+actualR);
   }
 }
+export const testNumerosEnTodo = () => {
+  expectedR=1;
+  actualR=insertData('312','231','315','4234','1344','2342')
+  if(expectedR==actualR){
+    console.log('Prueba Aprobada');
+  }else{
+    console.log('Prueba Fallida, resultado:'+actualR);
+  }
+}
+export const testCeroNegativoEnTodo = () => {
+  expectedR=1;
+  actualR=insertData('-0','-0','-0','-0','-0','-0')
+  if(expectedR==actualR){
+    console.log('Prueba Aprobada');
+  }else{
+    console.log('Prueba Fallida, resultado:'+actualR);
+  }
+}
+// PRUEBAS VALIDAR NUMEROS
 export const testvalidarNumeros = () => {
   expectedR=true;
   actualR=validarNumeros('20');
@@ -75,8 +94,8 @@ export const testvalidarNumeros = () => {
 }
 
 export const testvalidarNumerosConLetras = () => {
-  expectedR=true;
-  actualR=validarNumeros('Hola');
+  expectedR=false;
+  actualR=validarNumeros('Hol9');
   if(expectedR!=actualR){
     console.log('Prueba Aprobada');
   }else{
@@ -85,9 +104,66 @@ export const testvalidarNumerosConLetras = () => {
 }
 
 export const testvalidarNumerosNegativos = ()=>{
-  expectedR=true;
+  expectedR=false;
   actualR=validarNumeros('-500');
   if(expectedR!=actualR){
+    console.log('Prueba Aprobada');
+  }else{
+    console.log('Prueba Fallida, resultado:'+actualR);
+  }
+}
+
+export const testvalidarSoloLetras = ()=>{
+  expectedR=false;
+  actualR=validarNumeros('banana');
+  if(expectedR!=actualR){
+    console.log('Prueba Aprobada');
+  }else{
+    console.log('Prueba Fallida, resultado:'+actualR);
+  }
+}
+
+export const testvalidarCero = ()=>{
+  expectedR=false;
+  actualR=validarNumeros('0');
+  if(expectedR!=actualR){
+    console.log('Prueba Aprobada');
+  }else{
+    console.log('Prueba Fallida, resultado:'+actualR);
+  }
+}
+
+export const testvalidarSimbolos = ()=>{
+  expectedR=false;
+  actualR=validarNumeros('$%6');
+  if(expectedR!=actualR){
+    console.log('Prueba Aprobada');
+  }else{
+    console.log('Prueba Fallida, resultado:'+actualR);
+  }
+}
+export const testvalidarNumerosMedianos = () => {
+  expectedR=true;
+  actualR=validarNumeros('2000');
+  if(expectedR==actualR){
+    console.log('Prueba Aprobada');
+  }else{
+    console.log('Prueba Fallida, resultado:'+actualR);
+  }
+}
+export const testvalidarNumerosDecimales = () => {
+  expectedR=true;
+  actualR=validarNumeros('2000.50');
+  if(expectedR==actualR){
+    console.log('Prueba Aprobada');
+  }else{
+    console.log('Prueba Fallida, resultado:'+actualR);
+  }
+}
+export const testvalidarLetrasNegativas = () => {
+  expectedR=true;
+  actualR=validarNumeros('-aros');
+  if(expectedR==actualR){
     console.log('Prueba Aprobada');
   }else{
     console.log('Prueba Fallida, resultado:'+actualR);
