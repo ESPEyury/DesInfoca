@@ -1,21 +1,23 @@
 <template id="search" name="searchSom">
+
 	<div class="w3l_search">
-		<!-- href="/Search/" onclick="location.href=Busqueda;return false;" onsubmit="location.href=this.href+Busqueda;return false;" action="/Search/:userID" -->
 		<form   method="post"  name="formSe">
-			<input type="text" name="Search" placeholder="Buscar Servicios" required="" id="Search" onchange="cargarBusqueda()">
+			<input type="text" name="Search" placeholder="Buscar Servicios" required="" id="Search" onchange="cargarBusqueda()" class="txtboxSEARCH">
+			<input type="image" class="buscaA" name="search" src="http://www.clker.com/cliparts/7/C/B/Q/6/n/search-icon-hi.png" alt="Search">
 			<div class="clearfix"></div>
 		</form>
+		<!--
 		<button class="buscaA" id="buscar" name="buscar" aria-label="Left Align">
 			<i class="fa fa-search" aria-hidden="true"> </i>
 		</button>
+	-->
 	</div>
-
 
 	<script type="text/javascript">
 			function cargarBusqueda()
 			{
 			 Busqueda=document.formSe.Search.value;
 			}
-</script>
+	</script>
 
 </template>

@@ -24,3 +24,4 @@ iron:router
 accounts-ui
 twbs:bootstrap
 practicalmeteor:mocha
+cleandersonlobo:sweetalert2

@@ -1,24 +1,4 @@
 <template id="layout" name="layout">
-<!--
-  <div>
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{{pathFor 'search'}}">Infocanica  </a>
-    </div>
-    <div class="collapse navbar-collapse" id="navigation">
-      <ul class="nav navbar-nav navbar-center">
-        {{> loginButtons}}
-      </ul>
-    </div>
-  </nav>
-</div>
--->
 
   <div class="agileits_header">
 		<div class="container">
@@ -31,24 +11,17 @@
             <!--<a href="{{pathFor 'mainServices'}}"> </a>  onclick="location.href=+'{{pathFor '+TipoUserG+'}}';" -->
                 <li><a class="aDonde" href="/" onclick="location.href=TipoUserG;return false;">  Gestion </a></li>
             <!--    <button class="aDonde" href="/" onclick="location.href=TipoUserG;return false;">Gestion</button>  -->
-
           </ul>
           {{else}}
           <ul class="nav navbar-nav navbar-right">
               <li><a href="{{pathFor 'signUp'}}">  Sign In </a></li>
   				</ul>
-
         {{/if}}
         <ul class="nav navbar-nav navbar-right">
         <!--				 <li><a href="{{pathFor 'logIn'}}">  Iniciar Sesion </a></li>
           <li><a href="/Ayuda">Ayuda</a></li>
         -->{{> loginButtons}}
-
         </ul>
-
-
-
-
 			</div>
 			<div class="clearfix"> </div>
 		</div>
@@ -60,27 +33,22 @@
       <div class="w3ls_logo_products_left1">
           <ul class="phone_email">
             <li><i class="fa fa-phone" aria-hidden="true"></i>Asistente online +59399999999</li>
-
           </ul>
         </div>
         <div class="w3ls_logo_products_left">
           <h1><a href="/">Infocanica</a></h1>
         </div>
-<!--
-        <div class="w3l_search">
-          <form action="#" method="post">
-            <input type="search" name="Search" placeholder="Buscar..." required="">
-            <button type="submit" class="btn btn-default search" aria-label="Left Align" onclick="location.href='\Mecanicas'">
-              <i class="fa fa-search" aria-hidden="true"> </i>
-            </button>
-            <div class="clearfix"></div>
-          </form>
-        </div>
--->
         <div class="clearfix"> </div>
       </div>
     </div>
   <div class="main">
     {{> yield}}
   </div>
+
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $().UItoTop({ easingType: 'easeOutQuart' });
+    });
+  </script>
+
 </template>

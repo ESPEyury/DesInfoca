@@ -19,7 +19,8 @@ Template.signUp.events({
             console.log("Sacado de la base de datos: "+ usuarioTemp);
             console.log("Sacado del cliente: " +userVar);
             if(usuarioTemp==userVar){
-              alert("Cliente ya registrado en la base de datos");
+              swal('Usuario ya registrado', 'Nombre de usuario ya registrado, prueba con otro nombre...', 'error');
+              //alert("Cliente ya registrado en la base de datos");
             }else{
               Accounts.createUser({
                   username: userVar,
@@ -36,10 +37,12 @@ Template.signUp.events({
                     });
             }
           }else{
-            alert("No puedes utilizar la palabra ADMIN en tu nombre de usuario");
+            swal('Nombre de usuario incorrecto', 'No puedes utilizar la palabra ADMIN en tu nombre de usuario...', 'error');
+            //alert("No puedes utilizar la palabra ADMIN en tu nombre de usuario");
           }
         }else{
-          alert("Al acceder con tu numero de cedula como usuario, comprobarias que eres mecanico, y no tienes acceso a regostrate por este metodo");
+          swal('Nombre de usuario incorrecto', 'No puedes utilizar numeros en tu nombre de usuario...', 'error');
+          //alert("Al acceder con tu numero de cedula como usuario, comprobarias que eres mecanico, y no tienes acceso a regostrate por este metodo");
         }
           //  $(document).getElementById("link2").setAttribute("href",ref);
     /*    }else{
@@ -47,7 +50,9 @@ Template.signUp.events({
             TipoUserG= 'usuario';
             TipoUserG="/GesUser";
             var ref="{{pathFor 'mainServices'}}";
-          //    $(document).getElementById("link2").setAttribute("href",ref);
+          //    $(document).getElementById("link2").setAttribute("href",ref
+
+
           */
         },
 });

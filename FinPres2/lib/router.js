@@ -1,7 +1,7 @@
 Router.configure({
   layoutTemplate: 'layout',
   loadingTemplate: 'loading',
-  /*notFoundTemplate: 'notFound'*/
+  notFoundTemplate: 'notFound',
 });
 Router.route('/',{name:'searchSom'});
 Router.route('/Registrar',{name:'signUp'});

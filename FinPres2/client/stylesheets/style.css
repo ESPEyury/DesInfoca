@@ -144,13 +144,53 @@ button.btn.btn-default.search:hover {
 .w3l_search input[type="search"] {
 	margin-top:0px;
 }
+
+.w3l_search input[type="image"] {
+  font-size: 17px;
+  color:#999999;
+  background:#EAEAEA;
+  /*border: none;*/
+  position: right;
+  right: 15px;
+  border: 5px ;
+  width: 47px;
+  height: 43px;
+  /*outline: none;*/
+  padding: 0px;
+  border-radius: inherit;
+  -webkit-appearance: none;
+  -webkit-transition: .5s all;
+  -moz-transition: .5s all;
+  transition: .5s all;
+  display: block;
+  float: left;
+  height: 60px;
+  margin: 0px 5px 0px;
+  width: 60px;
+}
+
 .w3l_search i.fa.fa-search {
     font-size: 17px;
-	color:#fff;
+	  color:#ffffff;
+    background:#fe9126;
+    border: none;
+    position: right;
+    top: 4px;
+    right: 11px;
+    width: 47px;
+    height: 43px;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    border-radius: inherit;
+    -webkit-appearance: none;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    transition: .5s all;
 }
 button.w3l_search {
     border: none;
-    position: absolute;
+    position: right;
     top: 4px;
     right: 11px;
     width: 47px;

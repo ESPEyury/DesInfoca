@@ -12,7 +12,7 @@ Template.revisarServicios.events({
        'submit form':function (event) {
          // Prevent default browser form submit
          event.preventDefault();
-         var numbe = Mecanicos.findOne({"nomMe": {$regex: ".*" + Mecanica + ".*"}}).tele;
+         var numeroContactoMecanica = Mecanicos.findOne({"nomMe": {$regex: ".*" + Mecanica + ".*"}}).tele;
          var tipouser = UserG;
          var mecaAs=Mecanica;
          var tipServ = Servicios.findOne({"_id": {$regex: ".*" + Seleccion + ".*"}}).tipServ;
@@ -26,10 +26,11 @@ Template.revisarServicios.events({
            descript,
            costo,
            sucursal,
-           numbe,
+           numeroContactoMecanica,
            createdAt: new Date(),
          });
-         alert("Numero de Contacto: "+numbe);
+         swal(tipouser+'! aqui tienes la informacion De Contacto','Servicio: '+tipServ+'\n En la mecanica: '+mecaAs +'\n Numero de Contacto: '+numeroContactoMecanica+'\n ', 'info');
+         //alert("Numero de Contacto: "+numbe);
          },
 });
 

@@ -1,5 +1,4 @@
 <template id="gesMen" name="gesMen">
-	<!-- breadcrumbs -->
 	<div class="breadcrumbs">
 		<div class="container">
 			<ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
@@ -8,8 +7,7 @@
 			</ol>
 		</div>
 	</div>
-<!-- //breadcrumbs -->
-<!-- register -->
+
 	<div class="register">
 		<div class="container">
 			<h2>Registrar Mecanico</h2>
@@ -66,11 +64,18 @@
 			  acumulado-=10;
 			 if (cedula.substring(9,10)!=(acumulado*-1))
 			 {
-			  alert("Cedula no valida!!");
+				swal('Cedula incorrecta', 'Ingresa una cedula valida...', 'error');
+			  //alert("Cedula no valida!!");
 			  document.formRes.Cedula.setfocus();
 			 }
-			 alert("Cedula valida !!");
+			 //alert("Cedula valida !!");
 			}
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$().UItoTop({ easingType: 'easeOutQuart' });
+	});
 </script>
 
 </template>

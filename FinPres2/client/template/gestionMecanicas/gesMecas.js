@@ -21,7 +21,8 @@ Template.gesMen.events({
                 console.log("Sacado de la base de datos: "+ usuarioTemp);
                 console.log("Sacado del cliente: " +cedu);
                 if(usuarioTemp==cedu){
-                  alert("Mecanico ya registrado en la base de datos");
+                  swal('Mecanica ya registrado', 'Ingresa un nuevo mecanico...', 'error');
+                  //alert("Mecanico ya registrado en la base de datos");
                 }else{
                   Accounts.createUser({
                       username: cedu,
@@ -41,10 +42,12 @@ Template.gesMen.events({
                     sucur,
                     createdAt: new Date(),
                   });
-                  alert("Mecanico Registrado con exito");
+                  swal('Exito', 'Mecanico Registrado', 'success');
+                  //alert("Mecanico Registrado con exito");
                 }
             }else{
-              alert("Ingresa una cedula valida");
+              swal('Cedula incorrecta', 'Ingresa una cedula valida...', 'error');
+              //alert("Ingresa una cedula valida");
             }
             event.target.Email.value='';
             event.target.Cedula.value = '';

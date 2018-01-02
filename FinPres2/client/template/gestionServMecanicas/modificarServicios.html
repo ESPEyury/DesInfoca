@@ -7,8 +7,6 @@
       </ol>
     </div>
   </div>
-  <!-- //breadcrumbs -->
-  <!-- register -->
   <div class="register">
     <div class="container">
       <h2>Modificar Servicios Ofertados</h2>
@@ -23,7 +21,6 @@
           <th>Actualizar</th>
         </tr>
           {{#each Services}}
-          <!--class="editServs"-->
           <form class="{{_id}}" id= "{{_id}}" method="post">
           </form>
 
@@ -32,7 +29,6 @@
             <td >{{sucursal}}</td>
             <td><input type="text" placeholder="{{descript}}" size="15" name="Descripcion" id="Descripcion" form="{{_id}}" required></td>
             <td><input type="text" placeholder="{{costo}}" size="15" name="Costo" id="Costo" form="{{_id}}" required></td>
-<!--button class="update"   </button>-->
             <td><input type="submit" name="update" value="Actualizar" form="{{_id}}"></td>
           </tr>
           {{/each}}
@@ -40,5 +36,11 @@
 
     </div>
   </div>
-  <!-- //register -->
+
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $().UItoTop({ easingType: 'easeOutQuart' });
+
+    });
+  </script>
 </template>

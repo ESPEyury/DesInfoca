@@ -8,6 +8,7 @@ import * as test_login from "./template/layout/layout_test.js";
 import * as test_cedula from "./template/gestionMecanicas/mecanicas_test.js";
 
 Meteor.startup(()=>{
+  /*
   setTimeout(function(){
     console.log("PRUEBAS BUSQUEDA");
     //10
@@ -76,5 +77,5 @@ Meteor.startup(()=>{
     gestionarServiciosTest.testvalidarLetrasNegavitas();
   },1000);
 
-
+*/
 });

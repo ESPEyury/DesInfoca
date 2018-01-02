@@ -17,7 +17,8 @@ Template.gestionarServicios.events({
               sucursal,
               createdAt: new Date(),
             });
-            alert("Servicio Registrado con exito");
+            swal('Exito', 'Servicio Registrado', 'success');
+            //alert("Servicio Registrado con exito");
             event.target.TipServ.value = '';
             event.target.DescServ.value = '';
             event.target.Cost.value = '';
