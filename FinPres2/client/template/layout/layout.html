@@ -14,13 +14,11 @@
           </ul>
           {{else}}
           <ul class="nav navbar-nav navbar-right">
-              <li><a href="{{pathFor 'signUp'}}">  Sign In </a></li>
+              <li><a href="{{pathFor 'signUp'}}"> Join </a> </li>
   				</ul>
         {{/if}}
         <ul class="nav navbar-nav navbar-right">
-        <!--				 <li><a href="{{pathFor 'logIn'}}">  Iniciar Sesion </a></li>
-          <li><a href="/Ayuda">Ayuda</a></li>
-        -->{{> loginButtons}}
+          <li><a>{{> loginButtons}}</a></li>
         </ul>
 			</div>
 			<div class="clearfix"> </div>
@@ -36,7 +34,7 @@
           </ul>
         </div>
         <div class="w3ls_logo_products_left">
-          <h1><a href="/">Infocanica</a></h1>
+          <h1><a href="/" id="nameInfocanica" onclick="validarDirectorio()">Infocanica</a></h1>
         </div>
         <div class="clearfix"> </div>
       </div>
@@ -49,6 +47,18 @@
   $(document).ready(function() {
     $().UItoTop({ easingType: 'easeOutQuart' });
     });
+  </script>
+
+  <script type="text/javascript">
+    function validarDirectorio(){
+      if(Meteor.user()!=null){
+        if(Meteor.user().username.indexOf("ADMIN") != -1){
+          document.getElementById("nameInfocanica").href="/GesAdmin";
+        }else{
+          document.getElementById("nameInfocanica").href="/";
+        }
+      }
+    }
   </script>
 
 </template>

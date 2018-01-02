@@ -1,4 +1,5 @@
 import {insertData} from "./gestionarServicios.js";
+import {validarNumeros} from "./gestionarServicios.js";
 
 
 export const testDataNormal = () => {
