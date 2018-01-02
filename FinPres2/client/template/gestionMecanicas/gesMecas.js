@@ -12,17 +12,22 @@ Template.gesMen.events({
             var nomMe = event.target.Mecanica.value;
             var pass = event.target.Pass.value;
             var sucur = event.target.Sucursal.value;
+            console.log("PI-1: Leyendo los campos");
+            console.log("PI-1.1: Leyendo los campos");
             if(isNaN(cedu)==false){
+              console.log("PI-1.2: Validando cédula");
                 if(Meteor.users.findOne({"username":{$regex: ".*" + cedu + ".*"}})){
                   var usuarioTemp=Meteor.users.findOne({"username":{$regex: ".*" + cedu + ".*"}}).username;
+
                 }else{
                   var usuarioTemp="vacio";
                 }
-                console.log("Sacado de la base de datos: "+ usuarioTemp);
-                console.log("Sacado del cliente: " +cedu);
+                console.log("PI-1.3: Buscando mecanicos ya registrados");
+                //console.log("Sacado de la base de datos: "+ usuarioTemp);
+                //console.log("Sacado del cliente: " +cedu);
                 if(usuarioTemp==cedu){
-                  swal('Mecanica ya registrado', 'Ingresa un nuevo mecanico...', 'error');
-                  //alert("Mecanico ya registrado en la base de datos");
+                  alert("Mecanico ya registrado en la base de datos");
+                  //console.log("PI-3.4: Mecanico ya existente, registro invalidado");
                 }else{
                   Accounts.createUser({
                       username: cedu,
@@ -42,12 +47,12 @@ Template.gesMen.events({
                     sucur,
                     createdAt: new Date(),
                   });
-                  swal('Exito', 'Mecanico Registrado', 'success');
-                  //alert("Mecanico Registrado con exito");
+                  alert("Mecanico Registrado con exito");
                 }
+                console.log("PI-1.4: Registrando mecanico nuevo");
+                //console.log("PI-2.5: sesión: ",Meteor.user().username);
             }else{
-              swal('Cedula incorrecta', 'Ingresa una cedula valida...', 'error');
-              //alert("Ingresa una cedula valida");
+              alert("Ingresa una cedula valida");
             }
             event.target.Email.value='';
             event.target.Cedula.value = '';
@@ -58,28 +63,31 @@ Template.gesMen.events({
             event.target.Mecanica.value = '';
             event.target.Pass.value = '';
             },
-        });
-        //Para pruebas unitarias
-        export const validarcedula_t = (cedula) => {
-         var i;
-         var acumulado;
-         var instancia;
-         acumulado=0;
-         for (i=1;i<=9;i++)
-         {
-          if (i%2!=0)
-          {
-           instancia=cedula.substring(i-1,i)*2;
-           if (instancia>9) instancia-=9;
-          }
-          else instancia=cedula.substring(i-1,i);
-          acumulado+=parseInt(instancia);
-         }
-         while (acumulado>0)
-          acumulado-=10;
-         if (cedula.substring(9,10)!=(acumulado*-1))
-         {
-          return "Cedula no valida";
-         }
-         return "Cedula valida";
-        }
+});
+
+
+
+//Para pruebas unitarias
+export const validarcedula_t = (cedula) => {
+ var i;
+ var acumulado;
+ var instancia;
+ acumulado=0;
+ for (i=1;i<=9;i++)
+ {
+  if (i%2!=0)
+  {
+   instancia=cedula.substring(i-1,i)*2;
+   if (instancia>9) instancia-=9;
+  }
+  else instancia=cedula.substring(i-1,i);
+  acumulado+=parseInt(instancia);
+ }
+ while (acumulado>0)
+  acumulado-=10;
+ if (cedula.substring(9,10)!=(acumulado*-1))
+ {
+  return "Cedula no valida";
+ }
+ return "Cedula valida";
+}
