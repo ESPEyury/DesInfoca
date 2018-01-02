@@ -1,6 +1,7 @@
 Template.consultarMecanicas.helpers({
        Mecanics() {
-          return Mecanicos.find();
+            return Mecanicos.find();
+         
       },
 });
 

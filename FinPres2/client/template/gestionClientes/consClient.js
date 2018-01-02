@@ -1,5 +1,5 @@
 Template.consultarClientes.helpers({
   Clientes() {
-    return Clientes.find();
+      return Clientes.find();
   },
 });

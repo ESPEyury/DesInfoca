@@ -1,3 +1,35 @@
+Template.gesMen.helpers({
+       validacionBarraDeBusqueda() {
+
+
+      },
+});
+
+Template.gesMen.rendered = function() {
+    if(!this._rendered) {
+      this._rendered = true;
+      console.log('Template cargado por completo');
+    /*  console.log("Corriendo despues de cargar");
+    	if(Meteor.user()==null){
+    		swal('ADVERTENCIA','Busqueda por barra de navegacion desactivada', 'warning');
+    		Busqueda="";
+    		Seleccion="";
+    		Ruta="";
+    		Router.go("/");
+    	}else{
+    		if(Meteor.user().username.indexOf("ADMIN")==-1){
+    			swal('Intruso','Usted no tiene permisos para este modulo', 'error');
+    			Busqueda="";
+    			Seleccion="";
+    			Ruta="";
+    			Router.go("/");
+    		}
+    	}*/
+    }
+
+}
+
+
 Template.gesMen.events({
           'submit form':function (event) {
             // Prevent default browser form submit

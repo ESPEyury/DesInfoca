@@ -1,6 +1,6 @@
 Template.consultarServiciosContratados.helpers({
   Services() {
-    return ServiciosUser.find({"tipouser": {$regex: ".*" + UserG + ".*"}}).fetch();
+      return ServiciosUser.find({"tipouser": {$regex: ".*" + UserG + ".*"}}).fetch();
   },
 });
 

@@ -26,7 +26,7 @@ Template.gestionarServicios.events({
             },
         });
 export const validarNumeros = (costo) =>{
-           if(!IsNaN(costo)){
+           if(!isNaN(costo)){
              if(costo>0){
               return true;}
             /*else if (costo==0) {
@@ -40,7 +40,7 @@ export const validarNumeros = (costo) =>{
           }
 };
 export const insertData = (tipouser,mecaAs,tipServ,descript,costo,sucursal) =>{
-  if(IsNaN(tipouser)==true && IsNaN(mecaAs)==true && IsNaN(descript)==true && IsNaN(sucursal)==true && validarNumeros(costo)==true )
+  if(isNaN(tipouser)==true && isNaN(mecaAs)==true && isNaN(descript)==true && isNaN(sucursal)==true && validarNumeros(costo)==true )
   {
     Servicios.insert({
       tipouser,

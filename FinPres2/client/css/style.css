@@ -270,23 +270,6 @@ button.btn.btn-default.search:hover {
     font-size: 17px;
 	  color:#fff;
 }
-button.w3l_search {
-    border: none;
-    position: absolute;
-    top: 4px;
-    right: 11px;
-    width: 47px;
-    height: 43px;
-    outline: none;
-    box-shadow: none;
-    background:#00e58b;
-    padding: 0;
-    border-radius: inherit;
-    -webkit-appearance: none;
-    -webkit-transition: .5s all;
-    -moz-transition: .5s all;
-    transition: .5s all;
-}
 .btn-default:hover {
     background-color:#000;
     border:none;
