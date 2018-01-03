@@ -44,22 +44,22 @@ Template.gesMen.events({
             var nomMe = event.target.Mecanica.value;
             var pass = event.target.Pass.value;
             var sucur = event.target.Sucursal.value;
-            console.log("PI-2: Nuevo mecanico sesión");
-            console.log("PI-2.1: Leyendo los campos");
+            console.log("PI-3: Mecánico ya existente");
+            console.log("PI-3.1: Leyendo los campos");
             if(isNaN(cedu)==false){
-              console.log("PI-2.2: Validando cédula");
+              console.log("PI-3.2: Validando cédula");
                 if(Meteor.users.findOne({"username":{$regex: ".*" + cedu + ".*"}})){
                   var usuarioTemp=Meteor.users.findOne({"username":{$regex: ".*" + cedu + ".*"}}).username;
 
                 }else{
                   var usuarioTemp="vacio";
                 }
-                console.log("PI-2.3: Buscando mecanicos ya registrados");
+                console.log("PI-3.3: Buscando mecanicos ya registrados");
                 //console.log("Sacado de la base de datos: "+ usuarioTemp);
                 //console.log("Sacado del cliente: " +cedu);
                 if(usuarioTemp==cedu){
                   alert("Mecanico ya registrado en la base de datos");
-                  //console.log("PI-3.4: Mecanico ya existente, registro invalidado");
+                  console.log("PI-3.4: Mecanico ya existente, registro invalidado");
                 }else{
                   Accounts.createUser({
                       username: cedu,
@@ -81,8 +81,8 @@ Template.gesMen.events({
                   });
                   alert("Mecanico Registrado con exito");
                 }
-                console.log("PI-2.4: Registrando mecanico nuevo");
-                console.log("PI-2.5: sesión: ",Meteor.user().username);
+                
+
             }else{
               alert("Ingresa una cedula valida");
             }
