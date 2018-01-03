@@ -107,3 +107,223 @@ export const validarcedula_test_imbabura_novalida= () => {
     console.log("Prueba fallida",actual," ",result);
   }
 }
+export const validarcedula_test_carchi= () => {
+  expected = "Cedula valida";
+  actual = "0400688735";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_manabi= () => {
+  expected = "Cedula valida";
+  actual = "1303753618";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_napo= () => {
+  expected = "Cedula valida";
+  actual = "1706172648";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_azuay= () => {
+  expected = "Cedula valida";
+  actual = "0100967652";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_loja= () => {
+  expected = "Cedula valida";
+  actual = "1103037048";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_chimborazo= () => {
+  expected = "Cedula valida";
+  actual = "0200982163";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_guayas= () => {
+  expected = "Cedula valida";
+  actual = "0913537742";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_eloro= () => {
+  expected = "Cedula valida";
+  actual = "0702648551";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_orellana= () => {
+  expected = "Cedula valida";
+  actual = "1103756134";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_losrios= () => {
+  expected = "Cedula valida";
+  actual = "0200562791";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_pastaza= () => {
+  expected = "Cedula valida";
+  actual = "1303292583";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_cotopaxi= () => {
+  expected = "Cedula valida";
+  actual = "1711402980";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_stodomingo= () => {
+  expected = "Cedula valida";
+  actual = "1803538246";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_canar= () => {
+  expected = "Cedula valida";
+  actual = "0301506044";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_tungurahua= () => {
+  expected = "Cedula valida";
+  actual = "0602863730";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_staelena= () => {
+  expected = "Cedula valida";
+  actual = "0603224544";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_zamora= () => {
+  expected = "Cedula valida";
+  actual = "0104091285";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_bolivar= () => {
+  expected = "Cedula valida";
+  actual = "0201338787";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_morona= () => {
+  expected = "Cedula valida";
+  actual = "0102684529";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_esmeraldas= () => {
+  expected = "Cedula valida";
+  actual = "0800726424";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_galapagos= () => {
+  expected = "Cedula valida";
+  actual = "0100951987";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+export const validarcedula_test_sucumbios= () => {
+  expected = "Cedula valida";
+  actual = "1704426145";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
