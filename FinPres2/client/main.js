@@ -12,7 +12,7 @@ Meteor.startup(()=>{
 
   setTimeout(function(){
     //AQUI COLOCAR EL TOTAL DE PRUEBAS CADA VEZ QUE LO ACTUALICEN
-    //  ----++++==== 65 ====++++----  \\
+    //  ----++++==== 87  ====++++----  \\
 
     console.log("PRUEBAS BUSQUEDA");
     searchTest.TestSearchBanana();
@@ -52,7 +52,7 @@ Meteor.startup(()=>{
     test_login.control_login_test_entero_positivo_grande();
 
 
-    console.log("PRUEBAS VALIDACOIN DE CEDULAS");
+    console.log("PRUEBAS VALIDACION DE CEDULAS");
     test_cedula.validarcedula_test_valida();
     test_cedula.validarcedula_test_incompleta();
     test_cedula.validarcedula_test_mayor_a_10digitos();
@@ -63,6 +63,30 @@ Meteor.startup(()=>{
     test_cedula.validarcedula_test_pichincha();
     test_cedula.validarcedula_test_imbabura();
     test_cedula.validarcedula_test_imbabura_novalida();
+    test_cedula.validarcedula_test_carchi();
+    test_cedula.validarcedula_test_manabi();
+    test_cedula.validarcedula_test_napo();
+    test_cedula.validarcedula_test_azuay();
+    test_cedula.validarcedula_test_loja();
+    test_cedula.validarcedula_test_chimborazo();
+    test_cedula.validarcedula_test_guayas();
+    test_cedula.validarcedula_test_eloro();
+    test_cedula.validarcedula_test_orellana();
+    test_cedula.validarcedula_test_losrios();
+    test_cedula.validarcedula_test_pastaza();
+    test_cedula.validarcedula_test_cotopaxi();
+    test_cedula.validarcedula_test_stodomingo();
+    test_cedula.validarcedula_test_canar();
+    test_cedula.validarcedula_test_tungurahua();
+    test_cedula.validarcedula_test_staelena();
+    test_cedula.validarcedula_test_zamora();
+    test_cedula.validarcedula_test_bolivar();
+    test_cedula.validarcedula_test_morona();
+    test_cedula.validarcedula_test_esmeraldas();
+    test_cedula.validarcedula_test_galapagos();
+    test_cedula.validarcedula_test_sucumbios();
+
+
 
     console.log(" PRUEBAS  DE REVISION DE SERVICIOS DE MECANICAS");
     revisarServiciosTest.TestRevBananaOso();
@@ -123,7 +147,7 @@ Meteor.startup(()=>{
         }
     }
   }else{
-    console.log("No hay una sesion guardada, Inicia sesion porfavor");
+    console.log("No hay una sesion guardada, Inicia sesion por favor");
   }
   },1000);
 
