@@ -11,9 +11,31 @@ export const validarcedula_test_valida= () => {
   }
 }
 
+export const validarcedula_test_valida2= () => {
+  expected = "Cedula valida";
+  actual = "1723502223";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+
 export const validarcedula_test_incompleta= () => {
   expected = "Cedula no valida";
   actual = "1723";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+
+export const validarcedula_test_incompleta_3digitos= () => {
+  expected = "Cedula no valida";
+  actual = "172";
   result = validarcedula_t(actual);
   if(result === expected){
     console.log("Prueba realizada con exito");
@@ -33,9 +55,42 @@ export const validarcedula_test_mayor_a_10digitos= () => {
   }
 }
 
+export const validarcedula_test_mayor_a_15digitos= () => {
+  expected = "Cedula no valida";
+  actual = "172350222312345358";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+
+export const validarcedula_test_mayor_a_20digitos= () => {
+  expected = "Cedula no valida";
+  actual = "17235022231234535827578685";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+
 export const validarcedula_test_negativa= () => {
   expected = "Cedula no valida";
   actual = "-1723502223";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+
+export const validarcedula_test_negativa_invalida= () => {
+  expected = "Cedula no valida";
+  actual = "-1723502222";
   result = validarcedula_t(actual);
   if(result === expected){
     console.log("Prueba realizada con exito");
@@ -55,7 +110,40 @@ export const validarcedula_test_caracter= () => {
   }
 }
 
+export const validarcedula_test_caracter_especial= () => {
+  expected = "Cedula no valida";
+  actual = "-*723502223";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+
+export const validarcedula_test_caracter_especial_operacion= () => {
+  expected = "Cedula no valida";
+  actual = "+723502223";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+
 export const validarcedula_test_caracteres= () => {
+  expected = "Cedula no valida";
+  actual = "/*-+1723502231";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+
+export const validarcedula_test_caracteres_alternados= () => {
   expected = "Cedula no valida";
   actual = "1a2s3d5f4t7e5e";
   result = validarcedula_t(actual);
@@ -77,6 +165,28 @@ export const validarcedula_test_vacia= () => {
   }
 }
 
+export const validarcedula_test_sin_numeros= () => {
+  expected = "Cedula no valida";
+  actual = "asddasdasd";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+
+export const validarcedula_test_otros_caracteres= () => {
+  expected = "Cedula no valida";
+  actual = "?<>{}[]_-!#~";
+  result = validarcedula_t(actual);
+  if(result === expected){
+    console.log("Prueba realizada con exito");
+  }else{
+    console.log("Prueba fallida",actual," ",result);
+  }
+}
+
 export const validarcedula_test_pichincha= () => {
   expected = "Cedula valida";
   actual = "1710330265";
@@ -87,6 +197,7 @@ export const validarcedula_test_pichincha= () => {
     console.log("Prueba fallida",actual," ",result);
   }
 }
+
 export const validarcedula_test_imbabura= () => {
   expected = "Cedula valida";
   actual = "1004049258";

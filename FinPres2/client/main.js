@@ -85,6 +85,16 @@ Meteor.startup(()=>{
     test_cedula.validarcedula_test_esmeraldas();
     test_cedula.validarcedula_test_galapagos();
     test_cedula.validarcedula_test_sucumbios();
+    test_cedula.validarcedula_test_valida2();
+    test_cedula.validarcedula_test_incompleta_3digitos();
+    test_cedula.validarcedula_test_mayor_a_15digitos();
+    test_cedula.validarcedula_test_mayor_a_20digitos();
+    test_cedula.validarcedula_test_negativa_invalida();
+    test_cedula.validarcedula_test_caracter_especial();
+    test_cedula.validarcedula_test_caracter_especial_operacion();
+    test_cedula.validarcedula_test_caracteres_alternados();
+    test_cedula.validarcedula_test_sin_numeros();
+    test_cedula.validarcedula_test_otros_caracteres();
 
 
 
