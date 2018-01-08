@@ -3,16 +3,16 @@ Template.gestionarServicios.events({
             // Prevent default browser form submit
             event.preventDefault();
             var tipouser = UserG;
-            var mecaAs=Mecanica;
-            var tipServ = event.target.TipServ.value;
-            var descript = event.target.DescServ.value;
+            var nombreMecanica=Mecanica;
+            var tipoServicio = event.target.TipServ.value;
+            var descripcion = event.target.DescServ.value;
             var costo  = event.target.Cost.value;
             var sucursal = event.target.Sucursal.value;
             Servicios.insert({
               tipouser,
-              mecaAs,
-              tipServ,
-              descript,
+              nombreMecanica,
+              tipoServicio,
+              descripcion,
               costo,
               sucursal,
               createdAt: new Date(),
@@ -25,6 +25,8 @@ Template.gestionarServicios.events({
             event.target.Sucursal.value = '';
             },
         });
+
+
 export const validarNumeros = (costo) =>{
            if(!isNaN(costo)){
              if(costo>0){
@@ -39,6 +41,8 @@ export const validarNumeros = (costo) =>{
             return false;
           }
 };
+
+
 export const insertData = (tipouser,mecaAs,tipServ,descript,costo,sucursal) =>{
   if(isNaN(tipouser)==true && isNaN(mecaAs)==true && isNaN(descript)==true && isNaN(sucursal)==true && validarNumeros(costo)==true )
   {

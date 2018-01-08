@@ -10,7 +10,6 @@ Template.searchSom.events({
           }else{
             Router.go('/Search/'+Busqueda);
           }
-
         }else{
           swal('Solicitud denegada','Los administradores no tienen acceso a este modulo', 'error');
         }

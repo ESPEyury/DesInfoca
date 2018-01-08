@@ -1,9 +1,3 @@
-Template.gesMen.helpers({
-       validacionBarraDeBusqueda() {
-
-
-      },
-});
 
 Template.gesMen.rendered = function() {
     if(!this._rendered) {
@@ -32,24 +26,23 @@ Template.gesMen.rendered = function() {
 
 Template.gesMen.events({
           'submit form':function (event) {
-            // Prevent default browser form submit
             event.preventDefault();
             var tipouser = UserG;
-            var cedu = event.target.Cedula.value;
-            var nom = event.target.Nombres.value;
-            var ape  = event.target.Apellidos.value;
-            var dir = event.target.Direccion.value;
-            var ema = event.target.Email.value;
-            var tele = event.target.Telefono.value;
-            var nomMe = event.target.Mecanica.value;
-            var pass = event.target.Pass.value;
-            var sucur = event.target.Sucursal.value;
+            var cedula = event.target.Cedula.value;
+            var nombre = event.target.Nombres.value;
+            var apellido  = event.target.Apellidos.value;
+            var direccion = event.target.Direccion.value;
+            var email = event.target.Email.value;
+            var telefono = event.target.Telefono.value;
+            var nombreMecanica = event.target.Mecanica.value;
+            var password = event.target.Pass.value;
+            var sucursal = event.target.Sucursal.value;
             console.log("PI-3: Mecánico ya existente");
             console.log("PI-3.1: Leyendo los campos");
-            if(isNaN(cedu)==false){
+            if(isNaN(cedula)==false){
               console.log("PI-3.2: Validando cédula");
-                if(Meteor.users.findOne({"username":{$regex: ".*" + cedu + ".*"}})){
-                  var usuarioTemp=Meteor.users.findOne({"username":{$regex: ".*" + cedu + ".*"}}).username;
+                if(Meteor.users.findOne({"username":{$regex: ".*" + cedula + ".*"}})){
+                  var usuarioTemp=Meteor.users.findOne({"username":{$regex: ".*" + cedula + ".*"}}).username;
 
                 }else{
                   var usuarioTemp="vacio";
@@ -57,32 +50,30 @@ Template.gesMen.events({
                 console.log("PI-3.3: Buscando mecanicos ya registrados");
                 //console.log("Sacado de la base de datos: "+ usuarioTemp);
                 //console.log("Sacado del cliente: " +cedu);
-                if(usuarioTemp==cedu){
+                if(usuarioTemp==cedula){
                   alert("Mecanico ya registrado en la base de datos");
                   console.log("PI-3.4: Mecanico ya existente, registro invalidado");
                 }else{
                   Accounts.createUser({
-                      username: cedu,
-                      email: ema,
-                      password: pass,
+                      username: cedula,
+                      email: email,
+                      password: password,
                   });
                   Mecanicos.insert({
                     tipouser,
-                    cedu,
-                    nom,
-                    ape,
-                    ema,
-                    dir,
-                    tele,
-                    nomMe,
-                    pass,
-                    sucur,
+                    cedula,
+                    nombre,
+                    apellido,
+                    email,
+                    direccion,
+                    telefono,
+                    nombreMecanica,
+                    password,
+                    sucursal,
                     createdAt: new Date(),
                   });
                   alert("Mecanico Registrado con exito");
                 }
-                
-
             }else{
               alert("Ingresa una cedula valida");
             }

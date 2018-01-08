@@ -17,7 +17,6 @@ Router.route('/GesMen', {name: 'gesMen'});
 Router.route('/GesCli', {name: 'consultarClientes'});
 Router.route('/GesMenCon', {name: 'consultarMecanicas'});
 Router.route('/GesMenMod', {name: 'modificarMecanicas'});
-
 Router.route('/RevServs/:seleccion', {
     name: 'revisarServicios',
     data: function(){
@@ -26,7 +25,6 @@ Router.route('/RevServs/:seleccion', {
         return Servicios.find({"_id": {$regex: ".*" + Seleccion + ".*"}}).fetch();
       }
 } );
-
 Router.route( '/Search/:searchName', {
     name: 'searchMechanics',
     data: function(){

@@ -2,6 +2,7 @@ import * as test from "./revisarServiciosTest.js";
 
 
 Template.revisarServicios.helpers({
+  //permite tomar la informacion de un servicio en especifico
        Revisar() {
             return Servicios.find({"_id": {$regex: ".*" + Seleccion + ".*"}}).fetch();
       },
@@ -9,6 +10,7 @@ Template.revisarServicios.helpers({
 
 
 Template.revisarServicios.events({
+  //Registra en la base de datos el servicio seleccionado y presenta una vista de la informacion de contacto
        'submit form':function (event) {
          // Prevent default browser form submit
          event.preventDefault();
@@ -34,6 +36,8 @@ Template.revisarServicios.events({
          },
 });
 
+
+//Metodo utilizado para realizar pruebas respecto a la busqueda de un servicio en comun
 export const getMecanicData = (mecaAs, servi) => {
   //var numeroContactoMecanica = Mecanicos.findOne({"nomMe": {$regex: ".*" + mecaAs + ".*"}}).tele;
   //var idServicio=Servicios.findOne({"mecaAs": mecaAs},{"tipServ": servi})._id;

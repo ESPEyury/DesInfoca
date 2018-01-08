@@ -54,7 +54,7 @@ Template.layout.rendered = function() {
 
 
 Template.layout.events ({
-  "click #login-buttons-logout" : function (event, template) {
+  'click #login-buttons-logout' : function (event, template) {
    Meteor.logout(function(err) {
       Router.go('/');
       UserG="";
@@ -64,11 +64,23 @@ Template.layout.events ({
       Seleccion="";
       Ruta="";
     });
-  }
+  },
+
+  'click #GestionBtn' : function(event){
+    if(Meteor.user().username.includes("ADMIN")){
+      Router.go('/GesAdmin');
+    }else{
+      if(isNaN(Meteor.user().username)){
+        Router.go('/GesUser');
+      }else{
+        Router.go('/MecanicServ');
+      }
+    }
+  },
 });
 
 
-
+/*
 
 
 
@@ -101,3 +113,4 @@ export const control_login_t = (username) => {
       }
     }
 };
+*/

@@ -12,24 +12,29 @@
 				<h2>Sesion como Mecanico</h2>
 				<div class="login-form-grids">
 					<label for="Name" text-aling=center>Gestion De Servicios Mecanicos</label>
-					<form action="/GesServ" method="post">
-						<input type="submit" value="Registrar Servicio">
+					<!--<form action="/GesServ" method="post">-->
+					<form name="RegistrarServicio">
+						<input type="button" name="RegServ" id="RegServ" value="Registar Servicio">
+						<!--<input type="submit" value="Registrar Servicio">-->
 					</form>
-					<form action="/GesServCon" method="post">
-				     <input type="submit" value="Consultar Servicios">
+					<!--<form action="/GesServCon" method="post"> -->
+					<form name="ConsultarServicio">
+						<input type="button" name="ConsServ" id="ConsServ" value="Consultar Servicio">
+				   <!--  <input type="submit" value="Consultar Servicios">-->
 				  </form>
-					<form action="/GesServMod" method="post">
-						<input type="submit" value="Modificar Servicio">
+					<!--<form action="/GesServMod" method="post">-->
+					<form name="ModificarServicio">
+						<input type="button" name="ModServ" id="ModServ" value="Modificar Servicio">
 					</form>
 				</div>
 				<div class="login-form-grids">
 						<label for="Name" text-aling=center>Busqueda</label>
-					<form action="/" method="post">
-						<input type="submit" value="Buscar Servicios">
+					<form name="Buscar">
+						<input type="button" name="Buscar" id="BuscSer" value="Buscar Servicios">
 
 					</form>
-					<form action="/GesUser" method="post">
-						<input type="submit" value="Revision de Servicios">
+					<form name="revisionServicios">
+						<input type="button" id="RevServ" name="RevServ" value="Revision de Servicios">
 					</form>
 				</div>
 
