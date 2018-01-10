@@ -14,24 +14,24 @@ Template.revisarServicios.events({
        'submit form':function (event) {
          // Prevent default browser form submit
          event.preventDefault();
-         var numeroContactoMecanica = Mecanicos.findOne({"nomMe": {$regex: ".*" + Mecanica + ".*"}}).tele;
+         var numeroContactoMecanica = Mecanicos.findOne({"nombreMecanica": {$regex: ".*" + Mecanica + ".*"}}).telefono;
          var tipouser = UserG;
-         var mecaAs=Servicios.findOne({"_id": {$regex: ".*" + Seleccion + ".*"}}).mecaAs;;
-         var tipServ = Servicios.findOne({"_id": {$regex: ".*" + Seleccion + ".*"}}).tipServ;
-         var descript = Servicios.findOne({"_id": {$regex: ".*" + Seleccion + ".*"}}).descript;
+         var nombreMecanica=Servicios.findOne({"_id": {$regex: ".*" + Seleccion + ".*"}}).nombreMecanica;
+         var tipoServicio = Servicios.findOne({"_id": {$regex: ".*" + Seleccion + ".*"}}).tipoServicio;
+         var descripcion = Servicios.findOne({"_id": {$regex: ".*" + Seleccion + ".*"}}).descripcion;
          var costo  = Servicios.findOne({"_id": {$regex: ".*" + Seleccion + ".*"}}).costo;
          var sucursal = Servicios.findOne({"_id": {$regex: ".*" + Seleccion + ".*"}}).sucursal;
          ServiciosUser.insert({
            tipouser,
-           mecaAs,
-           tipServ,
-           descript,
+           nombreMecanica,
+           tipoServicio,
+           descripcion,
            costo,
            sucursal,
            numeroContactoMecanica,
            createdAt: new Date(),
          });
-         swal(tipouser+'! aqui tienes la informacion De Contacto','Servicio: '+tipServ+"\n En la mecanica: "+mecaAs +'\n Numero de Contacto: '+numeroContactoMecanica+'\n ', 'info');
+         swal(tipouser+'! aqui tienes la informacion De Contacto','Servicio: '+tipoServicio+"\n En la mecanica: "+nombreMecanica +'\n Numero de Contacto: '+numeroContactoMecanica+'\n ', 'info');
          //alert("Numero de Contacto: "+numbe);
          },
 });
@@ -41,7 +41,7 @@ Template.revisarServicios.events({
 export const getMecanicData = (mecaAs, servi) => {
   //var numeroContactoMecanica = Mecanicos.findOne({"nomMe": {$regex: ".*" + mecaAs + ".*"}}).tele;
   //var idServicio=Servicios.findOne({"mecaAs": mecaAs},{"tipServ": servi})._id;
-  if(Servicios.find({mecaAs: mecaAs ,tipServ: servi}).count()===0){
+  if(Servicios.find({nombreMecanica: mecaAs ,tipoServicio: servi}).count()===0){
     return '0';
   }else{
     return '1';

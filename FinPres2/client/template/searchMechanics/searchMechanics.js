@@ -6,7 +6,7 @@ Template.searchMechanics.helpers({
       if(Meteor.user()){
         var bus=Busqueda.split("/")[2];
         //if(Servicios.find({"tipServ": {$regex: ".*" + bus + ".*"}}).count()==0){
-        if(Servicios.find({"tipServ": {$regex: new RegExp( bus,"i")}}).count()==0){
+        if(Servicios.find({"tipoServicio": {$regex: new RegExp( bus,"i")}}).count()==0){
           swal('Sin coincidencias','No pudillos hallar ninguna coincidencia, Intentalo de nuevo', 'question');
           Busqueda="";
           Seleccion="";
@@ -15,7 +15,7 @@ Template.searchMechanics.helpers({
         }else{
           //Profiles.findOne({"username": /^newName$/i });
           //  return Servicios.find({"tipServ": {$regex: ".*" + bus + ".*"}}).fetch();
-          return  Servicios.find({"tipServ": {$regex: new RegExp( bus,"i")}}).fetch();
+          return  Servicios.find({"tipoServicio": {$regex: new RegExp( bus,"i")}}).fetch();
         }
       }else{
         swal('ADVERTENCIA','Busqueda por barra de navegacion desactivada', 'warning');
@@ -41,7 +41,7 @@ export const coutSearch = (palabraBusqueda) => {
   }
   Busqueda=palabraBusqueda;
   if(isNaN(Busqueda)==true){
-    return Servicios.find({"tipServ": {$regex: ".*" + palabraBusqueda + ".*"}}).count();
+    return Servicios.find({"tipoServicio": {$regex: ".*" + palabraBusqueda + ".*"}}).count();
   }else{
     return 0;
   }

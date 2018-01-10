@@ -16,6 +16,7 @@ Template.modificarMecanicas.events({
         console.log("PI-4: Modificacion de mecánico");
         console.log("PI-4.1: Leyendo variables ");
         Mecanicos.update(this._id,{$set:{email: nuevoEmail, direccion:nuevaDireccion, telefono:nuevoTelefono, nombreMecanica:nuevoNombreMecanica,sucursal:nuevaSucursal}});
+        swal("Mecanico Actualizado","","success");
         console.log("PI-4.2: Actualizando datos en la base de datos");
         event.target.Email.value = '';
         event.target.Dir.value = '';

@@ -1,5 +1,6 @@
 Template.signUp.events({
-    'submit form': function(event) {
+    //'click #btnRegistrar':function(event){
+    'submit form':function (event) {
       console.log("PI-6: Registro de clientes");
         event.preventDefault();
         var nameVar = event.target.registerName.value;
@@ -19,7 +20,11 @@ Template.signUp.events({
             }else{
               var usuarioTemp="vacio";
             }
-
+            if(Clientes.findOne({"emailVar":{$regex: ".*" + emailVar + ".*"}})){
+              var emailTemp=Clientes.findOne({"emailVar":{$regex: ".*" + emailVar + ".*"}}).emailVar;
+            }else{
+              var emailTemp="vacio";
+            }
             //console.log("Sacado de la base de datos: "+ usuarioTemp);
             //console.log("Sacado del cliente: " +userVar);
             if(usuarioTemp==userVar){
@@ -27,21 +32,33 @@ Template.signUp.events({
               swal('Usuario ya registrado', 'Nombre de usuario ya registrado, prueba con otro nombre...', 'error');
               //alert("Cliente ya registrado en la base de datos");
             }else{
-              console.log("PI-6.4: Creando usuario");
-              Accounts.createUser({
-                  username: userVar,
-                  email: emailVar,
-                  password: passwordVar
-              });
-              console.log("PI-6.4: insertando datos en clientes");
-              Clientes.insert({
-                      nameVar,
-                      lastNameVar,
-                      userVar,
-                      emailVar,
-                      passwordVar,
-                      createdAt: new Date(),
-                    });
+              if(emailTemp==emailVar){
+                swal('Correo ya registrado', 'Direccion de correo ya registrada...', 'error');
+              }else{
+                console.log("PI-6.4: Creando usuario");
+                Accounts.createUser({
+                    username: userVar,
+                    email: emailVar,
+                    password: passwordVar,
+                }), function(error){
+                    if(error){
+                        console.log(error.reason); // Output error if registration fails
+                    } else {
+                        Router.go("home"); // Redirect user if registration succeeds
+                    }
+                };
+                console.log("PI-6.4: insertando datos en clientes");
+                Clientes.insert({
+                        nameVar,
+                        lastNameVar,
+                        userVar,
+                        emailVar,
+                        passwordVar,
+                        createdAt: new Date(),
+                      });
+                      Router.go('/');
+                      swal('Completado', 'Tu registro se a completado con exito, inicia sesion...', 'success');
+              }
             }
           }else{
             swal('Nombre de usuario incorrecto', 'No puedes utilizar la palabra ADMIN en tu nombre de usuario...', 'error');

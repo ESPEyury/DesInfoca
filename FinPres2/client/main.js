@@ -10,10 +10,10 @@ import * as test_cedula from "./template/gestionMecanicas/mecanicas_test.js";
 import * as gestionarServiciosTest from "./template/gestionServMecanicas/gestionarServicios_test.js";
 Meteor.startup(()=>{
 
-  setTimeout(function(){
+  //setTimeout(function(){
     //AQUI COLOCAR EL TOTAL DE PRUEBAS CADA VEZ QUE LO ACTUALICEN
     //  ----++++==== 87  ====++++----  \\
-
+/*
     console.log("PRUEBAS BUSQUEDA");
     searchTest.TestSearchBanana();
     searchTest.TestSearchEmpty();
@@ -160,6 +160,5 @@ Meteor.startup(()=>{
     console.log("No hay una sesion guardada, Inicia sesion por favor");
   }
   },1000);
-
-
+*/
 });

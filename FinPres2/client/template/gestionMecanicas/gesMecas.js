@@ -1,29 +1,3 @@
-
-Template.gesMen.rendered = function() {
-    if(!this._rendered) {
-      this._rendered = true;
-      console.log('Template cargado por completo');
-    /*  console.log("Corriendo despues de cargar");
-    	if(Meteor.user()==null){
-    		swal('ADVERTENCIA','Busqueda por barra de navegacion desactivada', 'warning');
-    		Busqueda="";
-    		Seleccion="";
-    		Ruta="";
-    		Router.go("/");
-    	}else{
-    		if(Meteor.user().username.indexOf("ADMIN")==-1){
-    			swal('Intruso','Usted no tiene permisos para este modulo', 'error');
-    			Busqueda="";
-    			Seleccion="";
-    			Ruta="";
-    			Router.go("/");
-    		}
-    	}*/
-    }
-
-}
-
-
 Template.gesMen.events({
           'submit form':function (event) {
             event.preventDefault();
@@ -51,8 +25,8 @@ Template.gesMen.events({
                 //console.log("Sacado de la base de datos: "+ usuarioTemp);
                 //console.log("Sacado del cliente: " +cedu);
                 if(usuarioTemp==cedula){
-                  alert("Mecanico ya registrado en la base de datos");
-                  console.log("PI-3.4: Mecanico ya existente, registro invalidado");
+                  swal('Ops...','Mecanico ya registrado en la base de datos','warning');
+                  //console.log("PI-3.4: Mecanico ya existente, registro invalidado");
                 }else{
                   Accounts.createUser({
                       username: cedula,
@@ -72,10 +46,11 @@ Template.gesMen.events({
                     sucursal,
                     createdAt: new Date(),
                   });
-                  alert("Mecanico Registrado con exito");
+                  Router.go('/MecanicServ');
+                  swal('Completado','Mecanico Registrado con exito','success');
                 }
             }else{
-              alert("Ingresa una cedula valida");
+              swal('Error','Ingresa una cedula valida','error');
             }
             event.target.Email.value='';
             event.target.Cedula.value = '';

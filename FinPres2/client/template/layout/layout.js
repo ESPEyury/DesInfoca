@@ -1,7 +1,7 @@
 Template.layout.rendered = function() {
     if(!this._rendered) {
       this._rendered = true;
-      console.log('Template Layout cargado por completo');
+      console.log('Hola! esta es la ultima version! :D');
       Accounts.onLogin(function () {
         console.log("entre a la funcion");
           if(!Meteor.user().username){
@@ -11,7 +11,7 @@ Template.layout.rendered = function() {
             if(isNaN(UserG)==false){
                 console.log("logeado como mecanico");
                 TipoUserG= "/MecanicServ";
-                Mecanica=Mecanicos.findOne({"cedu": {$regex: ".*" + UserG + ".*"}}).nomMe;
+                Mecanica=Mecanicos.findOne({"cedula": {$regex: ".*" + UserG + ".*"}}).nombreMecanica;
                 console.log('Asociado a la mecanica: '+Mecanica);
                 //Router.go('/MecanicServ');
             }else{

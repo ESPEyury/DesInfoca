@@ -9,6 +9,7 @@ Template.consultarServiciosContratados.helpers({
 //permite eliminar de la base de datos el servicio seleccionado
 Template.consultarServiciosContratados.events({
   'click .delete'() {
+    swal('Eliminado','Servicio eliminado del historial','success');
     ServiciosUser.remove(this._id);
   },
 });
