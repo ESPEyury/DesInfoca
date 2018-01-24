@@ -3,11 +3,11 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
 import * as searchTest from './template/search/searchTest.js';
-import * as revisarServiciosTest from './template/gestionClientes/revisarServiciosTest.js';
+import * as checkServicesTest from './template/clientsManagement/checkServicesTest.js';
 import * as searchMechanicsTest from './template/searchMechanics/searchMechanicsTest.js';
-import * as test_login from "./template/layout/layout_test.js";
-import * as test_cedula from "./template/gestionMecanicas/mecanicas_test.js";
-import * as gestionarServiciosTest from "./template/gestionServMecanicas/gestionarServicios_test.js";
+import * as test_login from "./template/layout/layoutTest.js";
+import * as test_cedula from "./template/gestionMecanicas/mechanicsTest.js";
+import * as gestionarServiciosTest from "./template/MechanicServicesManagement/gestionarServicios_test.js";
 Meteor.startup(()=>{
 
   //setTimeout(function(){
@@ -99,13 +99,13 @@ Meteor.startup(()=>{
 
 
     console.log(" PRUEBAS  DE REVISION DE SERVICIOS DE MECANICAS");
-    revisarServiciosTest.TestRevBananaOso();
-    revisarServiciosTest.TestRevMarceloLavLlantas();
-    revisarServiciosTest.TestRevSOSLavLlantas();
-    revisarServiciosTest.TestRevSOSLavCoche();
-    revisarServiciosTest.TestRevSOSNumbers();
-    revisarServiciosTest.TestRev123Servicio();
-    revisarServiciosTest.TestRevLetrasNegativas();
+    checkServicesTest.TestRevBananaOso();
+    checkServicesTest.TestRevMarceloLavLlantas();
+    checkServicesTest.TestRevSOSLavLlantas();
+    checkServicesTest.TestRevSOSLavCoche();
+    checkServicesTest.TestRevSOSNumbers();
+    checkServicesTest.TestRev123Servicio();
+    checkServicesTest.TestRevLetrasNegativas();
 
     console.log(" PRUEBAS  DE SERVICIOS DE MECANICAS");
     gestionarServiciosTest.testDataNormal();

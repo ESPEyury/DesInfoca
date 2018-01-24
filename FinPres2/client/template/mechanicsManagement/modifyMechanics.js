@@ -1,10 +1,10 @@
-Template.modificarMecanicas.helpers({
+Template.modifyMechanics.helpers({
        Mecanics() {
           return Mecanicos.find();
       },
 });
 
-Template.modificarMecanicas.events({
+Template.modifyMechanics.events({
     'submit form':function (event) {
         // Prevent default browser form submit
         event.preventDefault();

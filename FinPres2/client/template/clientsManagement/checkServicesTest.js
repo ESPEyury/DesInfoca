@@ -1,4 +1,4 @@
-import {getMecanicData} from "./revisarServicios.js";
+import {getMecanicData} from "./checkServices.js";
 
 export const TestRevBananaOso = () => {
   expResult='0';

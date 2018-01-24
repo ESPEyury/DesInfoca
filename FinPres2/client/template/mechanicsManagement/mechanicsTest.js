@@ -1,4 +1,4 @@
-import {validarcedula_t} from "./gesMecas.js";
+import {validarcedula_t} from "./mechanicsManagement.js";
 
 export const validarcedula_test_valida= () => {
   expected = "Cedula valida";

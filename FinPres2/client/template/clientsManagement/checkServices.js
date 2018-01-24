@@ -1,7 +1,7 @@
-import * as test from "./revisarServiciosTest.js";
+import * as test from "./checkServicesTest.js";
 
 
-Template.revisarServicios.helpers({
+Template.checkServices.helpers({
   //permite tomar la informacion de un servicio en especifico
        Revisar() {
             return Servicios.find({"_id": {$regex: ".*" + Seleccion + ".*"}}).fetch();
@@ -9,7 +9,7 @@ Template.revisarServicios.helpers({
 });
 
 
-Template.revisarServicios.events({
+Template.checkServices.events({
   //Registra en la base de datos el servicio seleccionado y presenta una vista de la informacion de contacto
        'submit form':function (event) {
          // Prevent default browser form submit
