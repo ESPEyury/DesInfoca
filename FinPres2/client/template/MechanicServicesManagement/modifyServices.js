@@ -1,10 +1,10 @@
-Template.modificarServicios.onRendered(function(){
+Template.modifyServices.onRendered(function(){
    const Descipcion = this.find('#Descripcion').value;
    const Costos = this.find('#Costo').value;
  });
 
 
-Template.modificarServicios.helpers({
+Template.modifyServices.helpers({
   Services() {
     return Servicios.find({"tipouser": {$regex: ".*" + UserG + ".*"}}).fetch();
   },
@@ -13,7 +13,7 @@ Template.modificarServicios.helpers({
   },
 });
 
-Template.modificarServicios.events({
+Template.modifyServices.events({
   'submit form':function (event) {
     // Prevent default browser form submit
     event.preventDefault();

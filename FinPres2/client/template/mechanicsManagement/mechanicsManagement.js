@@ -1,4 +1,4 @@
-Template.gesMen.events({
+Template.mechanicsManagement.events({
           'submit form':function (event) {
             event.preventDefault();
             var tipouser = UserG;

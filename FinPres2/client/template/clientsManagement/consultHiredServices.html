@@ -1,37 +1,37 @@
-<template id="meca" name="consultarClientes">
+<template id="servClie" name="consultHiredServices">
   <div class="breadcrumbs">
     <div class="container">
       <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
         <li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
-        <li class="active">Usuarios Registrados en la Pagina</li>
+        <li class="active">Consulta De Servicios Contratados</li>
       </ol>
     </div>
   </div>
   <div class="register">
     <div class="container">
-      <h2>Clientes Registrados</h2>
+      <h2>Servicios Contratados Hasta El Momento</h2>
 
       <table class="responstable">
-
         <tr>
-          <th ><span>Nombres</span></th>
-          <th >Username</th>
-          <th>Email</th>
-          <th>Registrado</th>
+          <th ><span>Tipo de Servicio</span></th>
+          <th >Descripcion</th>
+          <th>Sucursal</th>
+          <th>Costo</th>
+          <th>Borrar</th>
         </tr>
-          {{#each  Clientes}}
+          {{#each Services}}
           <tr>
-            <td>{{nameVar}} {{lastNameVar}}</td>
-            <td>{{userVar}}</td>
-            <td>{{emailVar}}</td>
-            <td>{{createdAt}}</td>
+            <td>{{tipoServicio}}</td>
+            <td>{{descripcion}}</td>
+            <td>{{costo}}</td>
+            <td>{{sucursal}}</td>
+            <td><button class="delete">Borrar</button></td>
           </tr>
           {{/each}}
       </table>
 
     </div>
   </div>
-  
   <script type="text/javascript">
   $(document).ready(function() {
     $().UItoTop({ easingType: 'easeOutQuart' });

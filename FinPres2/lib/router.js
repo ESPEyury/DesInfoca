@@ -10,15 +10,15 @@ Router.route('/Ayuda',{name:'help'});
 Router.route('/MecanicServ', {name: 'mainServices'});
 Router.route('/GesServ', {name: 'gestionarServicios'});
 Router.route('/GesServCon', {name: 'consultarServicios'});
-Router.route('/GesServMod', {name: 'modificarServicios'});
-Router.route('/GesUser', {name: 'consultarServiciosContratados'});
+Router.route('/GesServMod', {name: 'modifyServices'});
+Router.route('/GesUser', {name: 'consultHiredServices'});
 Router.route('/GesAdmin', {name: 'mainAdmin'});
-Router.route('/GesMen', {name: 'gesMen'});
-Router.route('/GesCli', {name: 'consultarClientes'});
-Router.route('/GesMenCon', {name: 'consultarMecanicas'});
-Router.route('/GesMenMod', {name: 'modificarMecanicas'});
+Router.route('/GesMen', {name: 'mechanicsManagement'});
+Router.route('/GesCli', {name: 'consultClients'});
+Router.route('/GesMenCon', {name: 'consultMechanics'});
+Router.route('/GesMenMod', {name: 'modifyMechanics'});
 Router.route('/RevServs/:seleccion', {
-    name: 'revisarServicios',
+    name: 'checkServices',
     data: function(){
         Seleccion=this.params.seleccion;
         console.log(Seleccion);
