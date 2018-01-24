@@ -80,10 +80,13 @@ Template.layout.events ({
 });
 
 
-/*
 
 
 
+/**
+ * @param {String} username nombre del usuario
+   @returns {String} regresa el tipo de usuario
+  */
 //Para realizar pruebas
 export const control_login_t = (username) => {
   if(!username){
@@ -113,4 +116,3 @@ export const control_login_t = (username) => {
       }
     }
 };
-*/
