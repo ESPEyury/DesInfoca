@@ -6,8 +6,8 @@ import * as searchTest from './template/search/searchTest.js';
 import * as checkServicesTest from './template/clientsManagement/checkServicesTest.js';
 import * as searchMechanicsTest from './template/searchMechanics/searchMechanicsTest.js';
 import * as test_login from "./template/layout/layoutTest.js";
-import * as test_cedula from "./template/gestionMecanicas/mechanicsTest.js";
-import * as gestionarServiciosTest from "./template/MechanicServicesManagement/gestionarServicios_test.js";
+import * as test_cedula from "./template/mechanicsManagement/mechanicsTest.js";
+import * as gestionarServiciosTest from "./template/mechanicServicesManagement/manageServices_test.js";
 Meteor.startup(()=>{
 
   //setTimeout(function(){
@@ -132,14 +132,14 @@ Meteor.startup(()=>{
     TipoUserG="";
     Busqueda="";
     Mecanica="";
-    Seleccion="";
+    Selection="";
     Ruta="";
     if(Meteor.user()!=null){
       UserG=Meteor.user().username;
       if(isNaN(UserG)==false){
           console.log("logeado como mecanico");
           TipoUserG= "/MecanicServ";
-          Mecanica=Mecanicos.findOne({"cedu": {$regex: ".*" + UserG + ".*"}}).nomMe;
+          Mecanica=Mechanics.findOne({"cedu": {$regex: ".*" + UserG + ".*"}}).nomMe;
           console.log('Asociado a la mecanica: '+Mecanica);
           //Router.go('/MecanicServ');
       }else{

@@ -11,7 +11,7 @@ Template.layout.rendered = function() {
             if(isNaN(UserG)==false){
                 console.log("logeado como mecanico");
                 TipoUserG= "/MecanicServ";
-                Mecanica=Mecanicos.findOne({"cedula": {$regex: ".*" + UserG + ".*"}}).nombreMecanica;
+                Mecanica=Mechanics.findOne({"cedula": {$regex: ".*" + UserG + ".*"}}).nombreMecanica;
                 console.log('Asociado a la mecanica: '+Mecanica);
                 //Router.go('/MecanicServ');
             }else{
@@ -34,14 +34,14 @@ Template.layout.rendered = function() {
     	if(Meteor.user()==null){
     		swal('ADVERTENCIA','Busqueda por barra de navegacion desactivada', 'warning');
     		Busqueda="";
-    		Seleccion="";
+    		Selection="";
     		Ruta="";
     		Router.go("/");
     	}else{
     		if(Meteor.user().username.indexOf("ADMIN")==-1){
     			swal('Intruso','Usted no tiene permisos para este modulo', 'error');
     			Busqueda="";
-    			Seleccion="";
+    			Selection="";
     			Ruta="";
     			Router.go("/");
     		}
@@ -61,7 +61,7 @@ Template.layout.events ({
       TipoUserG="";
       Busqueda="";
       Mecanica="";
-      Seleccion="";
+      Selection="";
       Ruta="";
     });
   },
@@ -97,7 +97,7 @@ export const control_login_t = (username) => {
     if(isNaN(UserG)==false){
         //console.log("logeado como mecanico");
         TipoUserG= "/MecanicServ";
-        //Mecanica=Mecanicos.findOne({"cedu": {$regex: ".*" + UserG + ".*"}}).nomMe;
+        //Mecanica=Mechanics.findOne({"cedu": {$regex: ".*" + UserG + ".*"}}).nomMe;
         //console.log('Asociado a la mecanica: '+Mecanica);
         return "usuario: Mecanico";
     }else{

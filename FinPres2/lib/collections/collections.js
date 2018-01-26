@@ -1,7 +1,7 @@
-Clientes = new Mongo.Collection('Clientes');
-Mecanicos = new Mongo.Collection('Mecanicos');
-Servicios = new Mongo.Collection('Servicios');
-ServiciosUser= new Mongo.Collection('ServiciosUser');
+Clients = new Mongo.Collection('Clients');
+Mechanics = new Mongo.Collection('Mechanics');
+Services = new Mongo.Collection('Services');
+ServicesUser= new Mongo.Collection('ServicesUser');
 
 //Nombre del usuario conectado
 UserG="";
@@ -12,6 +12,6 @@ Busqueda="";
 //Seleccion de la mecanica en proceso
 Mecanica="";
 //id de la seleccion tomada del buscador
-Seleccion="";
+Selection="";
 //ruta generada a partir de la seleccion
 Ruta="";

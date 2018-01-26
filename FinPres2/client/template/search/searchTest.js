@@ -1,8 +1,8 @@
-import {setBusqueda} from "./search.js";
+import {setSearch} from "./search.js";
 
 export const TestSearchBanana = () => {
   expResult='Banana';
-  actuRestult = setBusqueda('Banana');
+  actuRestult = setSearch('Banana');
   if(actuRestult.localeCompare(expResult)==0){
     console.log('Prueba Aprovada, resultado:'+Busqueda);
   }else{
@@ -12,7 +12,7 @@ export const TestSearchBanana = () => {
 
 export const TestSearchEmpty = () => {
   expResult='Busqueda Vacia';
-  actuRestult = setBusqueda('');
+  actuRestult = setSearch('');
   if(actuRestult.localeCompare(expResult)==0){
     console.log('Prueba Aprovada, resultado:'+expResult);
   }else{
@@ -22,7 +22,7 @@ export const TestSearchEmpty = () => {
 
 export const TestSearchServicio = () => {
   expResult='Servicio';
-  actuRestult = setBusqueda('Servicio');
+  actuRestult = setSearch('Servicio');
   if(actuRestult.localeCompare(expResult)==0){
     console.log('Prueba Aprovada, resultado:'+expResult);
   }else{
@@ -32,7 +32,7 @@ export const TestSearchServicio = () => {
 
 export const TestSearchNumbers = () => {
   expResult='Busqueda No Valida';
-  actuRestult = setBusqueda(1234);
+  actuRestult = setSearch(1234);
   if(actuRestult.localeCompare(expResult)==0){
     console.log('Prueba Aprovada, resultado:'+expResult);
   }else{
@@ -42,7 +42,7 @@ export const TestSearchNumbers = () => {
 
 export const TestSearchNegativeNumbers = () => {
   expResult='Busqueda No Valida';
-  actuRestult = setBusqueda(-8);
+  actuRestult = setSearch(-8);
   if(actuRestult.localeCompare(expResult)==0){
     console.log('Prueba Aprovada, resultado:'+expResult);
   }else{
@@ -51,7 +51,7 @@ export const TestSearchNegativeNumbers = () => {
 }
 export const TestSearchZero = () => {
   expResult='Busqueda No Valida';
-  actuRestult = setBusqueda(0);
+  actuRestult = setSearch(0);
   if(actuRestult.localeCompare(expResult)==0){
     console.log('Prueba Aprovada, resultado:'+expResult);
   }else{
@@ -60,7 +60,7 @@ export const TestSearchZero = () => {
 }
 export const TestSearchAlphanumeric = () => {
   expResult='Busqueda No Valida';
-  actuRestult = setBusqueda('07j0fh');
+  actuRestult = setSearch('07j0fh');
   if(actuRestult.localeCompare(expResult)==0){
     console.log('Prueba Aprovada, resultado:'+expResult);
   }else{
@@ -69,7 +69,7 @@ export const TestSearchAlphanumeric = () => {
 }
 export const TestSearchNegativeLetters = () => {
   expResult='Busqueda No Valida';
-  actuRestult = setBusqueda('-a');
+  actuRestult = setSearch('-a');
   if(actuRestult.localeCompare(expResult)==0){
     console.log('Prueba Aprovada, resultado:'+expResult);
   }else{
@@ -78,7 +78,7 @@ export const TestSearchNegativeLetters = () => {
 }
 export const TestSearchMecanica = () => {
   expResult='Busqueda No Valida';
-  actuRestult = setBusqueda('Mecanica');
+  actuRestult = setSearch('Mecanica');
   if(actuRestult.localeCompare(expResult)==0){
     console.log('Prueba Aprovada, resultado:'+expResult);
   }else{

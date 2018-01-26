@@ -24,18 +24,18 @@
           <th>Sucursal</th>
           <th>Actualizar</th>
         </tr>
-          {{#each Mecanics}}
+          {{#each Mechanics}}
             <form class="{{_id}}" id="{{_id}}" method="post">
             </form>
           <tr>
-            <td>{{cedula}}</td>
-            <td>{{nombre}}</td>
-            <td>{{apellido}}</td>
+            <td>{{dni}}</td>
+            <td>{{name}}</td>
+            <td>{{surname}}</td>
             <td><input type="text" placeholder="{{email}}" size="13" name="Email" form="{{_id}}" required></td>
-            <td><input type="text" placeholder="{{direccion}}" size="14" name="Dir" form="{{_id}}" required></td>
-            <td><input type="text" placeholder="{{telefono}}" size="8" name="Telef" form="{{_id}}" required></td>
-            <td><input type="text" placeholder="{{nombreMecanica}}" size="13" name="NomMeca" form="{{_id}}" required></td>
-            <td><input type="text" placeholder="{{sucursal}}" size="8" name="Sucur" form="{{_id}}" required></td>
+            <td><input type="text" placeholder="{{direction}}" size="14" name="Dir" form="{{_id}}" required></td>
+            <td><input type="text" placeholder="{{phone}}" size="8" name="Phone" form="{{_id}}" required></td>
+            <td><input type="text" placeholder="{{mechanicName}}" size="13" name="MechanicName" form="{{_id}}" required></td>
+            <td><input type="text" placeholder="{{branch}}" size="8" name="Branch" form="{{_id}}" required></td>
             <td><input type="submit" name="update" value="Actualizar" form="{{_id}}"></td>
           </tr>
           {{/each}}

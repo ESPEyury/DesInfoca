@@ -17,12 +17,12 @@ Router.route('/GesMen', {name: 'mechanicsManagement'});
 Router.route('/GesCli', {name: 'consultClients'});
 Router.route('/GesMenCon', {name: 'consultMechanics'});
 Router.route('/GesMenMod', {name: 'modifyMechanics'});
-Router.route('/RevServs/:seleccion', {
+Router.route('/RevServs/:Selection', {
     name: 'checkServices',
     data: function(){
-        Seleccion=this.params.seleccion;
-        console.log(Seleccion);
-        return Servicios.find({"_id": {$regex: ".*" + Seleccion + ".*"}}).fetch();
+        Selection=this.params.Selection;
+        console.log(Selection);
+        return Servicios.find({"_id": {$regex: ".*" + Selection + ".*"}}).fetch();
       }
 } );
 Router.route( '/Search/:searchName', {

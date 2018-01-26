@@ -1,6 +1,6 @@
 Template.consultClients.helpers({
-//Devuelve un arreglo de todos los clientes disponibles en la mecanica
-  Clientes() {
-      return Clientes.find();
+//Devuelve un arreglo de todos los Clientes disponibles en la mecanica
+  Clients() {
+      return Clients.find();
   },
 });

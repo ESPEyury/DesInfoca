@@ -1,22 +1,22 @@
 <template id="checkServices" name="checkServices">
-	{{#each Revisar}}
+	{{#each Review}}
 	<div class="breadcrumbs">
 		<div class="container">
 			<ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
 				<li><a href="/MecanicServ"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
-				<li class="active">{{nombreMecanica}}</li>
+				<li class="active">{{mechanicName}}</li>
 			</ol>
 		</div>
 	</div>
 	<div class="register">
 		<div class="container">
-			<h2>Servicio: {{tipoServicio}}</h2>
+			<h2>Service: {{serviceType}}</h2>
 			<div class="login-form-grids">
 				<form class="present-ser" method="post" id="usrform">
 						<img title=" " src="/images/m2.png">
-						<label for="TipoServ">Descipcion: {{descripcion}}</label>
-						<label for="Sucursal">Sucursal: {{sucursal}}</label>
-						<label for="Costo">Valor: {{costo}}</label>
+						<label for="TipoServ">Descipcion: {{description}}</label>
+						<label for="Sucursal">Sucursal: {{branch}}</label>
+						<label for="Costo">Valor: {{cost}}</label>
 						<p></p>
 						<input type="submit" class="Ingresar" value="Hacer Contacto">
 				</form>

@@ -1,7 +1,7 @@
 Template.consultHiredServices.helpers({
 //Devuelve una lista de servicio contratados por el usuario UserG
   Services() {
-      return ServiciosUser.find({"tipouser": {$regex: ".*" + UserG + ".*"}}).fetch();
+      return ServicesUser.find({"tipouser": {$regex: ".*" + UserG + ".*"}}).fetch();
   },
 });
 
@@ -10,6 +10,6 @@ Template.consultHiredServices.helpers({
 Template.consultHiredServices.events({
   'click .delete'() {
     swal('Eliminado','Servicio eliminado del historial','success');
-    ServiciosUser.remove(this._id);
+    ServicesUser.remove(this._id);
   },
 });

@@ -33,7 +33,7 @@ Template.mechanicsManagement.events({
                       email: email,
                       password: password,
                   });
-                  Mecanicos.insert({
+                  Mechanics.insert({
                     tipouser,
                     cedula,
                     nombre,
@@ -66,26 +66,30 @@ Template.mechanicsManagement.events({
 
 
 //Para pruebas unitarias
-export const validarcedula_t = (cedula) => {
- var i;
- var acumulado;
- var instancia;
- acumulado=0;
- for (i=1;i<=9;i++)
- {
-  if (i%2!=0)
-  {
-   instancia=cedula.substring(i-1,i)*2;
-   if (instancia>9) instancia-=9;
+export const validateDni = (cedula) => {
+   var i;
+   var dni;
+   var acumulate;
+   dni=document.formRes.Cedula.value;
+   var instance;
+   acumulate=0;
+   for (i=1;i<=9;i++)
+   {
+    if (i%2!=0)
+    {
+     instance=dni.substring(i-1,i)*2;
+     if (instance>9) instance-=9;
+    }
+    else instance=dni.substring(i-1,i);
+    acumulate+=parseInt(instance);
+   }
+   while (acumulate>0)
+    acumulate-=10;
+   if (dni.substring(9,10)!=(acumulate*-1))
+   {
+    swal('Cedula incorrecta', 'Ingresa una cedula valida...', 'error');
+    //alert("Cedula no valida!!");
+    document.formRes.Cedula.setfocus();
+   }
+   //alert("Cedula valida !!");
   }
-  else instancia=cedula.substring(i-1,i);
-  acumulado+=parseInt(instancia);
- }
- while (acumulado>0)
-  acumulado-=10;
- if (cedula.substring(9,10)!=(acumulado*-1))
- {
-  return "Cedula no valida";
- }
- return "Cedula valida";
-}

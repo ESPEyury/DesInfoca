@@ -13,15 +13,15 @@ Template.signUp.events({
           console.log("PI-6.2: Validando usuario");
           if(!(userVar.includes("ADMIN"))){
             console.log("PI-6.3: Validando usuario no administrador");
-            //return Servicios.find({"tipouser": {$regex: ".*" + UserG + ".*"}}).fetch();
+            //return Services.find({"tipouser": {$regex: ".*" + UserG + ".*"}}).fetch();
             //var usuarioTemp=Meteor.users.findOne({}, {fields: {name: 1, _id: 0}}).name;
             if(Meteor.users.findOne({"username":{$regex: ".*" + userVar + ".*"}})){
               var usuarioTemp=Meteor.users.findOne({"username":{$regex: ".*" + userVar + ".*"}}).username;
             }else{
               var usuarioTemp="vacio";
             }
-            if(Clientes.findOne({"emailVar":{$regex: ".*" + emailVar + ".*"}})){
-              var emailTemp=Clientes.findOne({"emailVar":{$regex: ".*" + emailVar + ".*"}}).emailVar;
+            if(Clients.findOne({"emailVar":{$regex: ".*" + emailVar + ".*"}})){
+              var emailTemp=Clients.findOne({"emailVar":{$regex: ".*" + emailVar + ".*"}}).emailVar;
             }else{
               var emailTemp="vacio";
             }
@@ -48,7 +48,7 @@ Template.signUp.events({
                     }
                 };
                 console.log("PI-6.4: insertando datos en clientes");
-                Clientes.insert({
+                Clients.insert({
                         nameVar,
                         lastNameVar,
                         userVar,
