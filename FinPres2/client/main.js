@@ -7,7 +7,7 @@ import * as checkServicesTest from './template/clientsManagement/checkServicesTe
 import * as searchMechanicsTest from './template/searchMechanics/searchMechanicsTest.js';
 import * as test_login from "./template/layout/layoutTest.js";
 import * as test_cedula from "./template/mechanicsManagement/mechanicsTest.js";
-import * as gestionarServiciosTest from "./template/mechanicServicesManagement/manageServices_test.js";
+import * as manageServicesTest from "./template/mechanicServicesManagement/manageServicesTest.js";
 Meteor.startup(()=>{
 
   //setTimeout(function(){
@@ -100,31 +100,33 @@ Meteor.startup(()=>{
 
     console.log(" PRUEBAS  DE REVISION DE SERVICIOS DE MECANICAS");
     checkServicesTest.TestRevBananaOso();
-    checkServicesTest.TestRevMarceloLavLlantas();
-    checkServicesTest.TestRevSOSLavLlantas();
+    checkServicesTest.TestRevMarceloLavTires();
+    checkServicesTest.TestRevSOSLavTires();
     checkServicesTest.TestRevSOSLavCoche();
     checkServicesTest.TestRevSOSNumbers();
-    checkServicesTest.TestRev123Servicio();
-    checkServicesTest.TestRevLetrasNegativas();
+    checkServicesTest.TestRev123Service();
+    checkServicesTest.TestRevNegativeLetters();
 
     console.log(" PRUEBAS  DE SERVICIOS DE MECANICAS");
-    gestionarServiciosTest.testDataNormal();
-    gestionarServiciosTest.testNumerosEnDescripcion();
-    gestionarServiciosTest.testNumerosEnCosto();
-    gestionarServiciosTest.testNumerosEnTipoServicio();
-    gestionarServiciosTest.testNumerosEnSucurcal();
-    gestionarServiciosTest.testNumerosNegativosEnCosto();
-    gestionarServiciosTest.testLetrasEnCosto();
-    gestionarServiciosTest.testNumerosEnTodo();
-    gestionarServiciosTest.testCeroNegativoEnTodo();
-    gestionarServiciosTest.testvalidarNumeros();
-    gestionarServiciosTest.testvalidarNumerosConLetras();
-    gestionarServiciosTest.testvalidarNumerosNegativos();
-    gestionarServiciosTest.testvalidarSoloLetras();
-    gestionarServiciosTest.testvalidarCero();
-    gestionarServiciosTest.testvalidarSimbolos();
-    gestionarServiciosTest.testvalidarNumerosMedianos();
-    gestionarServiciosTest.testvalidarLetrasNegativas();
+    manageServicesTest.testDataNormal();
+    manageServicesTest.testNumbersInDescription();
+    manageServicesTest.testNumbersInCost();
+    manageServicesTest.testNumbersInServiceType();
+    manageServicesTest.testNumbersInBranch();
+    manageServicesTest.testNegativeNumbersInCost();
+    manageServicesTest.testLettersInCost();
+    manageServicesTest.testNumbersInAll();
+    manageServicesTest.testCeroNegativoEnTodo();
+    manageServicesTest.testValidateNumbers();
+    manageServicesTest.testValidateNumbersAndLetters();
+    manageServicesTest.testValidateNegativeNumbers();
+    manageServicesTest.testValidateOnlyLetters();
+    manageServicesTest.testValidateDecimalNumbers();
+    manageServicesTest.testvalidarZero();
+    manageServicesTest.testValidateSimbols();
+    manageServicesTest.testValidateMediumNumbers();
+    manageServicesTest.testValidateNegativeLetters();
+
 
 
     console.log("CARGANDO VALORES DE LA SESION");

@@ -88,8 +88,6 @@ export const validateDni = (cedula) => {
    if (dni.substring(9,10)!=(acumulate*-1))
    {
     swal('Cedula incorrecta', 'Ingresa una cedula valida...', 'error');
-    //alert("Cedula no valida!!");
     document.formRes.Cedula.setfocus();
    }
-   //alert("Cedula valida !!");
   }

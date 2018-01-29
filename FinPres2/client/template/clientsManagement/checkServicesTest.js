@@ -10,7 +10,7 @@ export const TestRevBananaOso = () => {
   }
 }
 
-export const TestRevMarceloLavLlantas = () => {
+export const TestRevMarceloLavTires = () => {
   expResult='1';
   actualRestult = getMecanicData('Marcelo Reyes','Lavado llantas');
   if(actualRestult.localeCompare(expResult)==0){
@@ -20,7 +20,7 @@ export const TestRevMarceloLavLlantas = () => {
   }
 }
 
-export const TestRevSOSLavLlantas = () => {
+export const TestRevSOSLavTires = () => {
   expResult='0';
   actualRestult = getMecanicData('SOS','Lavado llantas');
   if(actualRestult.localeCompare(expResult)==0){
@@ -51,7 +51,7 @@ export const TestRevSOSNumbers = () => {
   }
 }
 
-export const TestRev123Servicio = () => {
+export const TestRev123Service = () => {
   expResult='0';
   actualRestult = getMecanicData('123','Servicio');
   if(actualRestult.localeCompare(expResult)==0){
@@ -61,7 +61,7 @@ export const TestRev123Servicio = () => {
   }
 }
 
-export const TestRevLetrasNegativas = () => {
+export const TestRevNegativeLetters = () => {
   expResult='0';
   actualRestult = getMecanicData('-123','-lavado');
   if(actualRestult.localeCompare(expResult)==0){

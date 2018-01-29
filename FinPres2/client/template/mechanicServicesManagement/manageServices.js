@@ -45,9 +45,6 @@ export const validateNumbers = (cost) =>{
            if(!isNaN(cost)){
              if(cost>0){
               return true;}
-            /*else if (cost==0) {
-              alert("Ingrese un valor mayor a 0");
-            }*/
             else {
               return false;}
             }
@@ -66,7 +63,7 @@ export const validateNumbers = (cost) =>{
     * @param {String} branch es el lugar donde esta la mecanic
  */
 export const insertData = (typeUser,mecaAs,tipServ,descript,cost,branch) =>{
-  if(isNaN(typeUser)==true && isNaN(mecaAs)==true && isNaN(descript)==true && isNaN(branch)==true && validarNumeros(cost)==true )
+  if(isNaN(typeUser)==true && isNaN(mecaAs)==true && isNaN(descript)==true && isNaN(branch)==true && validateNumbers(cost)==true )
   {
     Services.insert({
       typeUser,
@@ -80,7 +77,6 @@ export const insertData = (typeUser,mecaAs,tipServ,descript,cost,branch) =>{
     return 1;
   }
   else {
-    //alert("Revisar campos");
     return 0;
   }
 };
