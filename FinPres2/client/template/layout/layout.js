@@ -30,22 +30,6 @@ Template.layout.rendered = function() {
             }
           },
       );
-    /*  console.log("Corriendo despues de cargar");
-    	if(Meteor.user()==null){
-    		swal('ADVERTENCIA','Busqueda por barra de navegacion desactivada', 'warning');
-    		Busqueda="";
-    		Selection="";
-    		Ruta="";
-    		Router.go("/");
-    	}else{
-    		if(Meteor.user().username.indexOf("ADMIN")==-1){
-    			swal('Intruso','Usted no tiene permisos para este modulo', 'error');
-    			Busqueda="";
-    			Selection="";
-    			Ruta="";
-    			Router.go("/");
-    		}
-    	}*/
     }
 
 }

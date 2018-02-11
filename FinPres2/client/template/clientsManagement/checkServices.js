@@ -49,7 +49,7 @@ Template.checkServices.events({
 
 
 //Metodo utilizado para realizar pruebas respecto a la busqueda de un service en comun
-export const getMecanicData = (mechanicName, service) => {
+export const getMechanicData = (mechanicName, service) => {
   //var contactNumber = Mechanics.findOne({"nomMe": {$regex: ".*" + mecaAs + ".*"}}).tele;
   //var idServicio=Services.findOne({"mecaAs": mecaAs},{"tipServ": servi})._id;
   if(Services.find({mechanicName: mechanicName ,serviceType: service}).count()===0){

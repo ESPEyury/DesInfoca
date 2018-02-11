@@ -1,72 +1,72 @@
-import {getMecanicData} from "./checkServices.js";
+import {getMechanicData} from "./checkServices.js";
 
 export const TestRevBananaOso = () => {
   expResult='0';
-  actualRestult = getMecanicData('Banana','Oso');
-  if(actualRestult.localeCompare(expResult)==0){
-    console.log('Prueba Aprovada, resultado:'+actualRestult);
+  actualResult = getMechanicData('Banana','Oso');
+  if(actualResult.localeCompare(expResult)==0){
+    console.log('Prueba Aprovada, resultado:'+actualResult);
   }else{
-    console.log('Prueba Fallida, resultado:'+actualRestult);
+    console.log('Prueba Fallida, resultado:'+actualResult);
   }
 }
 
 export const TestRevMarceloLavTires = () => {
   expResult='1';
-  actualRestult = getMecanicData('Marcelo Reyes','Lavado llantas');
-  if(actualRestult.localeCompare(expResult)==0){
-    console.log('Prueba Aprovada, resultado:'+actualRestult);
+  actualResult = getMechanicData('Marcelo Reyes','Lavado llantas');
+  if(actualResult.localeCompare(expResult)==0){
+    console.log('Prueba Aprovada, resultado:'+actualResult);
   }else{
-    console.log('Prueba Fallida, resultado:'+actualRestult);
+    console.log('Prueba Fallida, resultado:'+actualResult);
   }
 }
 
 export const TestRevSOSLavTires = () => {
   expResult='0';
-  actualRestult = getMecanicData('SOS','Lavado llantas');
-  if(actualRestult.localeCompare(expResult)==0){
-    console.log('Prueba Aprovada, resultado:'+actualRestult);
+  actualResult = getMechanicData('SOS','Lavado llantas');
+  if(actualResult.localeCompare(expResult)==0){
+    console.log('Prueba Aprovada, resultado:'+actualResult);
   }else{
-    console.log('Prueba Fallida, resultado:'+actualRestult);
+    console.log('Prueba Fallida, resultado:'+actualResult);
   }
 }
 
 
 export const TestRevSOSLavCoche = () => {
   expResult='1';
-  actualRestult = getMecanicData('SOS','Lavado Coche');
-  if(actualRestult.localeCompare(expResult)==0){
-    console.log('Prueba Aprovada, resultado:'+actualRestult);
+  actualResult = getMechanicData('SOS','Lavado Coche');
+  if(actualResult.localeCompare(expResult)==0){
+    console.log('Prueba Aprovada, resultado:'+actualResult);
   }else{
-    console.log('Prueba Fallida, resultado:'+actualRestult);
+    console.log('Prueba Fallida, resultado:'+actualResult);
   }
 }
 
 export const TestRevSOSNumbers = () => {
   expResult='0';
-  actualRestult = getMecanicData('SOS','123456');
-  if(actualRestult.localeCompare(expResult)==0){
-    console.log('Prueba Aprovada, resultado:'+actualRestult);
+  actualResult = getMechanicData('SOS','123456');
+  if(actualResult.localeCompare(expResult)==0){
+    console.log('Prueba Aprovada, resultado:'+actualResult);
   }else{
-    console.log('Prueba Fallida, resultado:'+actualRestult);
+    console.log('Prueba Fallida, resultado:'+actualResult);
   }
 }
 
 export const TestRev123Service = () => {
   expResult='0';
-  actualRestult = getMecanicData('123','Servicio');
-  if(actualRestult.localeCompare(expResult)==0){
-    console.log('Prueba Aprovada, resultado:'+actualRestult);
+  actualResult = getMechanicData('123','Servicio');
+  if(actualResult.localeCompare(expResult)==0){
+    console.log('Prueba Aprovada, resultado:'+actualResult);
   }else{
-    console.log('Prueba Fallida, resultado:'+actualRestult);
+    console.log('Prueba Fallida, resultado:'+actualResult);
   }
 }
 
 export const TestRevNegativeLetters = () => {
   expResult='0';
-  actualRestult = getMecanicData('-123','-lavado');
-  if(actualRestult.localeCompare(expResult)==0){
-    console.log('Prueba Aprovada, resultado:'+actualRestult);
+  actualResult = getMechanicData('-123','-lavado');
+  if(actualResult.localeCompare(expResult)==0){
+    console.log('Prueba Aprovada, resultado:'+actualResult);
   }else{
-    console.log('Prueba Fallida, resultado:'+actualRestult);
+    console.log('Prueba Fallida, resultado:'+actualResult);
   }
 }
