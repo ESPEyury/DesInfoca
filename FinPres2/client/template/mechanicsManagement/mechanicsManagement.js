@@ -14,7 +14,7 @@ Template.mechanicsManagement.events({
       */
           'submit form':function (event) {
             event.preventDefault();
-            var tipouser = UserG;
+            var tipouser = GLOBAL_USER;
             var cedula = event.target.Cedula.value;
             var nombre = event.target.Nombres.value;
             var apellido  = event.target.Apellidos.value;
@@ -24,47 +24,9 @@ Template.mechanicsManagement.events({
             var nombreMecanica = event.target.Mecanica.value;
             var password = event.target.Pass.value;
             var sucursal = event.target.Sucursal.value;
-            console.log("PI-3: Mecánico ya existente");
-            console.log("PI-3.1: Leyendo los campos");
-            if(isNaN(cedula)==false){
-              console.log("PI-3.2: Validando cédula");
-                if(Meteor.users.findOne({"username":{$regex: ".*" + cedula + ".*"}})){
-                  var usuarioTemp=Meteor.users.findOne({"username":{$regex: ".*" + cedula + ".*"}}).username;
 
-                }else{
-                  var usuarioTemp="vacio";
-                }
-                console.log("PI-3.3: Buscando mecanicos ya registrados");
-                //console.log("Sacado de la base de datos: "+ usuarioTemp);
-                //console.log("Sacado del cliente: " +cedu);
-                if(usuarioTemp==cedula){
-                  swal('Ops...','Mecanico ya registrado en la base de datos','warning');
-                  //console.log("PI-3.4: Mecanico ya existente, registro invalidado");
-                }else{
-                  Accounts.createUser({
-                      username: cedula,
-                      email: email,
-                      password: password,
-                  });
-                  Mechanics.insert({
-                    tipouser,
-                    cedula,
-                    nombre,
-                    apellido,
-                    email,
-                    direccion,
-                    telefono,
-                    nombreMecanica,
-                    password,
-                    sucursal,
-                    createdAt: new Date(),
-                  });
-                  Router.go('/MecanicServ');
-                  swal('Completado','Mecanico Registrado con exito','success');
-                }
-            }else{
-              swal('Error','Ingresa una cedula valida','error');
-            }
+            validate_mechanic(tipouser,cedula,nombre,apellido,email,direccion,telefono,nombreMecanica,password,sucursal);
+
             event.target.Email.value='';
             event.target.Cedula.value = '';
             event.target.Nombres.value = '';
@@ -76,11 +38,62 @@ Template.mechanicsManagement.events({
             },
 });
 
+validate_mechanic(tipouser,cedula,nombre,apellido,email,direccion,telefono,nombreMecanica,password,sucursal){
+  //console.log("PI-3: Mecánico ya existente");
+  //console.log("PI-3.1: Leyendo los campos");
+  if(isNaN(cedula)==false){
+    //console.log("PI-3.2: Validando cédula");
+      if(check_username(cedula)){
+        var usuarioTemp=Meteor.users.findOne({"username":{$regex: ".*" + cedula + ".*"}}).username;
 
+      }else{
+        var usuarioTemp="vacio";
+      }
+      //console.log("PI-3.3: Buscando mecanicos ya registrados");
+      if(usuarioTemp==cedula){
+        swal('Ops...','Mecanico ya registrado en la base de datos','warning');
+      }else{
+        insert_user(cedula,email,password)
+        insert_mechanic(tipouser,cedula,nombre,apellido,email,direccion,telefono,nombreMecanica,password,sucursal);
+
+        Router.go('/MecanicServ');
+        swal('Completado','Mecanico Registrado con exito','success');
+      }
+  }else{
+    swal('Error','Ingresa una cedula valida','error');
+  }
+}
+
+check_username(cedula){
+  Meteor.users.findOne({"username":{$regex: ".*" + cedula + ".*"}})
+}
+
+insert_mechanic(tipouser,cedula,nombre,apellido,email,direccion,telefono,nombreMecanica,password,sucursal){
+  Mechanics.insert({
+    tipouser,
+    cedula,
+    nombre,
+    apellido,
+    email,
+    direccion,
+    telefono,
+    nombreMecanica,
+    password,
+    sucursal,
+    createdAt: new Date(),
+  });
+}
+
+insert_user(cedula,email,password){
+  Accounts.createUser({
+      username: cedula,
+      email: email,
+      password: password,
+  });
+}
 
 //Para pruebas unitarias
 export const validateDni = (cedula) => {
-   var i;
    var dni;
    var acumulate;
    dni=document.formRes.Cedula.value;

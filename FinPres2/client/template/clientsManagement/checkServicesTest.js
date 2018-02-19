@@ -13,8 +13,8 @@ export const TestRevBananaOso = () => {
 export const TestRevMarceloLavTires = () => {
   expResult='1';
   actualResult = getMechanicData('Marcelo Reyes','Lavado llantas');
-  if(actualResult.localeCompare(expResult)==0){
-    console.log('Prueba Aprovada, resultado:'+actualResult);
+    if(actualResult.localeCompare(expResult)==0){
+      console.log('Prueba Aprovada, resultado:'+actualResult);
   }else{
     console.log('Prueba Fallida, resultado:'+actualResult);
   }
@@ -26,7 +26,7 @@ export const TestRevSOSLavTires = () => {
   if(actualResult.localeCompare(expResult)==0){
     console.log('Prueba Aprovada, resultado:'+actualResult);
   }else{
-    console.log('Prueba Fallida, resultado:'+actualResult);
+  console.log('Prueba Fallida, resultado:'+actualResult);
   }
 }
 
@@ -67,6 +67,6 @@ export const TestRevNegativeLetters = () => {
   if(actualResult.localeCompare(expResult)==0){
     console.log('Prueba Aprovada, resultado:'+actualResult);
   }else{
-    console.log('Prueba Fallida, resultado:'+actualResult);
+     console.log('Prueba Fallida, resultado:'+actualResult);
   }
 }

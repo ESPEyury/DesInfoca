@@ -19,11 +19,11 @@
 
     <h1 class="page-title">Source: gestionarServicios.js</h1>
 
-    
 
 
 
-    
+
+
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>Template.gestionarServicios.events({
@@ -47,7 +47,7 @@
             var descripcion = event.target.DescServ.value;
             var costo  = event.target.Cost.value;
             var sucursal = event.target.Sucursal.value;
-            Servicios.insert({
+            Services.insert({
               tipouser,
               nombreMecanica,
               tipoServicio,
@@ -96,7 +96,7 @@ export const validarNumeros = (costo) =>{
 export const insertData = (tipouser,mecaAs,tipServ,descript,costo,sucursal) =>{
   if(isNaN(tipouser)==true &amp;&amp; isNaN(mecaAs)==true &amp;&amp; isNaN(descript)==true &amp;&amp; isNaN(sucursal)==true &amp;&amp; validarNumeros(costo)==true )
   {
-    Servicios.insert({
+    Services.insert({
       tipouser,
       mecaAs,
       tipServ,

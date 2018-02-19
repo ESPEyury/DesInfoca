@@ -6,7 +6,7 @@ Template.modifyServices.onRendered(function(){
 
 Template.modifyServices.helpers({
   Services() {
-    return Services.find({"typeUser": {$regex: ".*" + UserG + ".*"}}).fetch();
+    return Services.find({"typeUser": {$regex: ".*" + GLOBAL_USER + ".*"}}).fetch();
   },
   Description() {
     return this.document.getElementsByTagName("Description").value;
@@ -15,7 +15,6 @@ Template.modifyServices.helpers({
 
 Template.modifyServices.events({
   'submit form':function (event) {
-    // Prevent default browser form submit
     event.preventDefault();
     var description=event.target.Description.value;
     var cost=event.target.Cost.value;

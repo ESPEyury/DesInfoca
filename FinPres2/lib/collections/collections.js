@@ -4,14 +4,14 @@ Services = new Mongo.Collection('Services');
 ServicesUser= new Mongo.Collection('ServicesUser');
 
 //Nombre del usuario conectado
-UserG="";
+GLOBAL_USER="";
 //Tipo de usuario conectado
-TipoUserG="";
-//Variable global de busqueda
-Busqueda="";
-//Seleccion de la mecanica en proceso
-Mecanica="";
+GLOBAL_TYPE_USER="";
+//Variable global de GLOBAL_SEARCH
+GLOBAL_SEARCH="";
+//Seleccion de la GLOBAL_MECHANIC en proceso
+GLOBAL_MECHANIC="";
 //id de la seleccion tomada del buscador
-Selection="";
+GLOBAL_SELECTION="";
 //ruta generada a partir de la seleccion
-Ruta="";
+GLOBAL_ROUTE="";

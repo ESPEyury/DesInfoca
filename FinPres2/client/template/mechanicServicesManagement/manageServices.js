@@ -5,7 +5,7 @@ Template.gestionarServicios.events({
  *
  *  @type typeUser es el tipo de usuario
  *  @type mechanicName es el nombre de la mecanica
- * @type serviceType es el servicio que ofrece la mecanica
+* @type serviceType es el servicio que ofrece la mecanica
   * @type description describe los rasgos del daño
    * @type cost describe el costo del trabajo a realizar
     * @type branch es el lugar donde esta la mecanica
@@ -13,19 +13,23 @@ Template.gestionarServicios.events({
  * @return {} no retorna
  */
             event.preventDefault();
-            var typeUser = UserG;
-            var mechanicName=Mecanica;
+            var typeUser = GLOBAL_USER;
+            var mechanicName=GLOBAL_MECHANIC;
             var serviceType = event.target.ServiceType.value;
             var description = event.target.ServiceDescription.value;
             var cost  = event.target.Cost.value;
             var branch = event.target.Branch.value;
+
             var validate= insertData = (typeUser,mechanicName,serviceType,description,cost,branch);
-            if (validate==1){
-              swal('Exito', 'Servicio Registrado', 'success');
-            }
-            else {
-              swal('Error', 'Servicio No Registrado', 'warning');
-            }
+           if (validate==1){
+             swal('Exito', 'Servicio Registrado', 'success');
+           }
+           else {
+             swal('Error', 'Servicio No Registrado', 'warning');
+           }
+
+            swal('Exito', 'Servicio Registrado', 'success');
+            //alert("Servicio Registrado con exito");
             event.target.ServiceType.value = '';
             event.target.ServiceDescription.value = '';
             event.target.Cost.value = '';
@@ -60,8 +64,8 @@ export const validateNumbers = (cost) =>{
  */
 export const insertData = (typeUser,mecaAs,tipServ,descript,cost,branch) =>{
   if(isNaN(typeUser)==true && isNaN(mecaAs)==true &&
-    isNaN(descript)==true && isNaN(branch)==true &&
-    validateNumbers(cost)==true )
+      isNaN(descript)==true && isNaN(branch)==true &&
+      validateNumbers(cost)==true )
   {
     Services.insert({
       typeUser,

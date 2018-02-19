@@ -1,4 +1,5 @@
-//added sesionAdministrador.js routes on an single implementation
+//David Llerena
+//Bad Smell - Lazy Class  I've added sesionAdministrador.js routes on an single implementation
 Template.mainServices.events({
 
   'click #RegServ':function(event){
@@ -16,6 +17,7 @@ Template.mainServices.events({
   'click #RevServ':function(event){
     Router.go('/GesUser');
     },
+
   'click #RegMecani':function(event){
     Router.go('/GesMen');
     },
@@ -28,4 +30,5 @@ Template.mainServices.events({
   'click #ConsUser':function(event){
     Router.go('/GesCli');
     },
+
 });

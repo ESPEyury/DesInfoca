@@ -4,7 +4,7 @@ export const TestSearchBanana = () => {
   expResult='Banana';
   actuRestult = setSearch('Banana');
   if(actuRestult.localeCompare(expResult)==0){
-    console.log('Prueba Aprovada, resultado:'+Busqueda);
+    console.log('Prueba Aprovada, resultado:'+GLOBAL_SEARCH);
   }else{
     console.log('Prueba Fallida, resultado:'+actuRestult);
   }

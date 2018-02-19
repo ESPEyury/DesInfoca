@@ -20,14 +20,14 @@ Router.route('/GesMenMod', {name: 'modifyMechanics'});
 Router.route('/RevServs/:Selection', {
     name: 'checkServices',
     data: function(){
-        Selection=this.params.Selection;
-        console.log(Selection);
-        return Servicios.find({"_id": {$regex: ".*" + Selection + ".*"}}).fetch();
+        GLOBAL_SELECTION=this.params.Selection;
+        console.log(GLOBAL_SELECTION);
+        return Servicios.find({"_id": {$regex: ".*" + GLOBAL_SELECTION + ".*"}}).fetch();
       }
 } );
 Router.route( '/Search/:searchName', {
     name: 'searchMechanics',
     data: function(){
-        Busqueda="/Search/"+this.params.searchName;
+        GLOBAL_SEARCH="/Search/"+this.params.searchName;
       }
 } );

@@ -1,37 +1,35 @@
 Template.layout.rendered = function() {
     if(!this._rendered) {
       this._rendered = true;
-      console.log('Hola! esta es la ultima version! :D');
       Accounts.onLogin(function () {
         console.log("entre a la funcion");
           if(!Meteor.user().username){
             swal('Nombre de usuario vacio','error');
           }
-          UserG=Meteor.user().username;
-            if(isNaN(UserG)==false){
+          GLOBAL_USER=Meteor.user().username;
+            if(isNaN(GLOBAL_USER)==false){
                 console.log("logeado como mecanico");
-                TipoUserG= "/MecanicServ";
-                Mecanica=Mechanics.findOne({"cedula": {$regex: ".*" + UserG + ".*"}}).nombreMecanica;
-                console.log('Asociado a la mecanica: '+Mecanica);
+                GLOBAL_TYPE_USER= "/MecanicServ";
+                GLOBAL_MECHANIC=Mechanics.findOne({"cedula": {$regex: ".*" + GLOBAL_USER + ".*"}}).nombreMecanica;
+                console.log('Asociado a la mecanica: '+GLOBAL_MECHANIC);
                 //Router.go('/MecanicServ');
             }else{
-              if(UserG.includes("ADMIN")){
+              if(GLOBAL_USER.includes("ADMIN")){
                 console.log('logeado como admin');
-                TipoUserG=  'admin';
-                TipoUserG= "/GesAdmin";
+                GLOBAL_TYPE_USER=  'admin';
+                GLOBAL_TYPE_USER= "/GesAdmin";
                 var ref="{{pathFor 'mainServices'}}";
                 //Router.go('/GesAdmin');
               }else{
                 console.log('logeado como usuario');
-                TipoUserG= 'usuario';
-                TipoUserG="/GesUser";
+                GLOBAL_TYPE_USER= 'usuario';
+                GLOBAL_TYPE_USER="/GesUser";
                 var ref="{{pathFor 'mainServices'}}";
               }
             }
           },
       );
     }
-
 }
 
 
@@ -41,12 +39,12 @@ Template.layout.events ({
   'click #login-buttons-logout' : function (event, template) {
    Meteor.logout(function(err) {
       Router.go('/');
-      UserG="";
-      TipoUserG="";
-      Busqueda="";
-      Mecanica="";
-      Selection="";
-      Ruta="";
+      GLOBAL_USER="";
+      GLOBAL_TYPE_USER="";
+      GLOBAL_SEARCH="";
+      GLOBAL_MECHANIC="";
+      GLOBAL_SELECTION="";
+      GLOBAL_ROUTE="";
     });
   },
 
@@ -74,27 +72,19 @@ Template.layout.events ({
 //Para realizar pruebas
 export const control_login_t = (username) => {
   if(!username){
-    //alert("Vacio");
     return "usuario no encontrado";
   }
-  UserG=username;
-    if(isNaN(UserG)==false){
-        //console.log("logeado como mecanico");
-        TipoUserG= "/MecanicServ";
-        //Mecanica=Mechanics.findOne({"cedu": {$regex: ".*" + UserG + ".*"}}).nomMe;
-        //console.log('Asociado a la mecanica: '+Mecanica);
+  GLOBAL_USER=username;
+    if(isNaN(GLOBAL_USER)==false){
+        GLOBAL_TYPE_USER= "/MecanicServ";
         return "usuario: Mecanico";
     }else{
-      if(UserG.includes("ADMIN") ){
-        //console.log('logeado como admin');
-        //TipoUserG=  'admin';
-        TipoUserG= "/GesAdmin";
+      if(GLOBAL_USER.includes("ADMIN") ){
+        GLOBAL_TYPE_USER= "/GesAdmin";
         var ref="{{pathFor 'mainServices'}}";
         return "usuario: Administrador";
       }else{
-        //console.log('logeado como usuario');
-        //TipoUserG= 'usuario';
-        TipoUserG="/GesUser";
+        GLOBAL_TYPE_USER="/GesUser";
         var ref="{{pathFor 'mainServices'}}";
         return "usuario: Cliente";
       }

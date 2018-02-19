@@ -1,7 +1,7 @@
 Template.consultHiredServices.helpers({
-//Devuelve una lista de servicio contratados por el usuario UserG
+//Devuelve una lista de servicio contratados por el usuario GLOBAL_USER
   Services() {
-      return ServicesUser.find({"tipouser": {$regex: ".*" + UserG + ".*"}}).fetch();
+      return ServicesUser.find({"tipouser": {$regex: ".*" + GLOBAL_USER + ".*"}}).fetch();
   },
 });
 

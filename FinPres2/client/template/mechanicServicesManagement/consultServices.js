@@ -1,6 +1,6 @@
 Template.consultServices.helpers({
        Services() {
-          return Services.find({"tipouser": {$regex: ".*" + UserG + ".*"}}).fetch();
+          return Services.find({"tipouser": {$regex: ".*" + GLOBAL_USER + ".*"}}).fetch();
       },
 });
 
